@@ -5,7 +5,9 @@ You've read (*most of*) the OpenC2 specs, and even wrote a quick Consumer to try
 Well, here is an informal guide to the knitty-gritty of OpenC2. 
 
 
-## OpenC2 Message 
+## OpenC2 Message Payload
+
+The meat of any OpenC2 Message is the payload, and it is both very simple and very complicated. It's called the "Content" of a message in the Language Spec.
 
 In an OpenC2 Command Message, the only required payload is an action and target:
 ```
@@ -36,7 +38,9 @@ In an OpenC2 Command Message, the only required payload is an action and target:
 ```
 
 
+Ok, we've covered the minimum payload. Anything else to 
 
+Yes! The forgotten children of OpenC2: the headers. In the Language Spec, they're known as Common Message Elements, and their presense and format is completely dependent on what Transport you are using. When sending the above examples over HTTP, you need to include
 
 
 * **Transfer-Dependent Headers** : Known as [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in Language Spec. The presence and format of these are completely dependent on the Transfer Spec. For example, the HTTPS combines content_type and msg_type into one field.
