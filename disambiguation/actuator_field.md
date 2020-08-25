@@ -22,7 +22,7 @@ Say we have Consumers implementing the following Actuator Profile(s):
 |5|slpf + x-troublemaker | - | deny ipv4_net |
 
 
-### Response Behavior with Command "deny ipv4_net"
+### deny ipv4_net
 ...with different values for the Actuator field:
 
 
