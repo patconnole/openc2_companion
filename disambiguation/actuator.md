@@ -25,7 +25,7 @@ Two fundamental things to understand are that:
 * Consumer_SLPF_GOOD: **"slpf"** + **"x-good"**
 * Consumer_SLPF_BAD: **"slfp"** + **"x-bad"**
 
-|             |"deny" <br> {"ipv4_net".. <br> "actuator": "" | "deny" <br> {"ipv4_net".. <br> "actuator": {"slpf".. |
+|             |deny ipv4_net.. <br> "actuator": "" | deny ipv4_net.. <br> "actuator": {"slpf".. |
 |-|:-|:-|
 |slpf| 200 OK             | 200 OK |
 |x-troublemaker| 200 OK             | 200 OK |
