@@ -11,6 +11,8 @@ Two fundamental things to understand are that:
 
 # Example Responses
 
+#### Say we have the following Consumers:
+
 |Consumer Implementing <br> Actuator Profile(s)| Relevant Action-Target Pair |
 |-|-|
 |slpf |**"deny ipv4_net"** |
