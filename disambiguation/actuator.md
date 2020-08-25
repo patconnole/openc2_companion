@@ -13,10 +13,10 @@ Two fundamental things to understand are that:
 
 Say we have Consumers implementing the following Actuator Profile(s):
 
-|Actuator Profile(s)| Overlapping Action-Target Pair |
+|Actuator Profile(s)| Overlapping Action-Target Pairs |
 |-|-|
-|slpf |**"deny ipv4_net"** |
-|x-troublemaker | **"deny ipv4_net"**  |
+|slpf |deny ipv4_net" |
+|x-troublemaker | deny ipv4_net  |
 |x-acme | none |
 |slpf + x-acme | ... |
 |slpf + x-troublemaker | ... |
