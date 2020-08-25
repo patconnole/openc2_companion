@@ -9,16 +9,18 @@ Two fundamental things to understand are that:
 
 
 
-### Example Consumers
-|Consumer Implementing <br> Actuator Profile(s)| Example Action-Target Pair |
+# Example Responses
+
+|Consumer Implementing <br> Actuator Profile(s)| Relevant Action-Target Pair |
 |-|-|
 |slpf |**"deny ipv4_net"** |
 |x-troublemaker | **"deny ipv4_net"**  |
 |x-acme | **"detonate x-acme:road_runner"** |
-|slpf + x-acme | |
-|slpf + x-troublemaker |  |
+|slpf + x-acme | ... |
+|slpf + x-troublemaker | ... |
 
-#### Consumer receives 'deny ipv4_net'
+#### Response Behavior Upon Receiving "deny ipv4_net"
+
 
 |             |"actuator": "" | "actuator": {"slpf".. |
 |-|:-|:-|
