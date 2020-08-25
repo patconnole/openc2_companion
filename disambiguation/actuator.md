@@ -9,7 +9,7 @@ Two fundamental things to understand are that:
 
 
 
-# Example Responses
+# Examples
 
 Say we have Consumers implementing the following Actuator Profile(s):
 
@@ -21,6 +21,8 @@ Say we have Consumers implementing the following Actuator Profile(s):
 |slpf + x-acme | ... |
 |slpf + x-troublemaker | ... |
 
+
+#### Response Behavior
 Consumer receives **"deny ipv4_net"** with different values for the Actuator field:
 
 
