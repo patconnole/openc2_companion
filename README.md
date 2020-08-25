@@ -1,13 +1,9 @@
 # openc2_companion
 
-
-&#x2705; 1 OpenC2 Response in 1 HTTP Response     
-&#x274C; undefined;
  
-:triangular_flag_on_post:
+:small_red_triangle: Required
+:small_blue_diamond" Optional
 
-content_type: application/openc2-rsp+json;version=1.0
-Content, content_type, and msg_type are required in all Messages.
  
 
 * **Transfer-Dependent Headers** : These are called [Common Message Elements in Language Spec](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message)
