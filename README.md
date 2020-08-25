@@ -2,10 +2,40 @@
 
 You've read (*most of*) the OpenC2 specs, and even wrote a quick Consumer to try out. Now what?
 
-Well, here is an informal guide to OpenC2.
+Well, here is an informal guide to the knitty-gritty of OpenC2. 
 
 
 ## OpenC2 Message 
+
+In an OpenC2 Command Message, the only required payload is an action and target:
+```
+
+ Action value is always a single-word, eg "deny"
+            |
+            |
+            |
+            v
+"action":  "deny"
+"target":  { "ipv4_net" : ["192.168.17.0/24"] }
+              ^           ^
+              |           |
+              |           |
+              |           Type and value here depend on the target.
+  Target value is         For ipv4_net in json, it's a one-value array.
+  always a one-key          
+  dictionary, eg 
+  {"ipv4_net": ...}
+                              We could also have a another dictionary, 
+                              as with target ipv4_connection:
+                                |
+                                |
+                                v
+"action": "deny"                  
+"target": { "ipv4_connection" : {"protocol": "tcp",
+                                 "src_addr": "1.2.3.4",
+```
+
+
 
 :exclamation: Required
 
@@ -16,7 +46,7 @@ Well, here is an informal guide to OpenC2.
  
 * **Content / Payload**
   * **"action"** :exclamation:  : string; single word
-  * **"target"** :exclamation:  : nested-dictionary; only one key at root. eg "target" : {"ipv4_net": ...}
-  * **"args"**  : nested-dictionary; multiple keys at root. eg "args" : {"response_requested" : ..., "duration" : ...}
-  * **"actuator"** : nested-dictionary; only one key at root. eg "actuator" : {"slpf": ...} [Actuator Field Disambiguation](/disambiguation/actuator.md)
+  * **"target"** :exclamation:  : one-key-dictionary, with its value dependent on the target. eg "target" : {"ipv4_net": ...}
+  * **"args"**  : nested-dictionary; multiple-key-dictionary eg "args" : {"response_requested" : ..., "duration" : ...}
+  * **"actuator"** : nested-dictionary; one-key-dictionary, with its value dependent on the target eg "actuator" : {"slpf": ...} [Actuator Field Disambiguation](/disambiguation/actuator.md)
   * **"command_id"** : string
