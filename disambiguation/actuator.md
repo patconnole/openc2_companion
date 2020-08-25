@@ -11,8 +11,8 @@ Two fundamental things to understand are that:
 
 ### EXAMPLES
 
-* Consumer_SLPF: "slpf", including command "deny ipv4_net"
-* Consumer_ACME: "x-acme", including command "deny x-acme:road_runner"
+* Consumer_SLPF: **"slpf"**, including command **"deny ipv4_net"**
+* Consumer_ACME: **"x-acme"**, including command **"deny x-acme:road_runner"**
 * Consumer_SLPF_ACME: Implements both of the above.
 
 |             |"action": "deny" <br> "target": {"ipv4_net".. <br> "actuator": "" | "action": "deny" <br> "target": {"ipv4_net".. <br> "actuator": {"slpf".. |
