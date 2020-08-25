@@ -17,7 +17,7 @@ Say we have Consumers implementing the following Actuator Profile(s):
 |-|-|
 |slpf |**"deny ipv4_net"** |
 |x-troublemaker | **"deny ipv4_net"**  |
-|x-acme | "detonate x-acme:road_runner" |
+|x-acme | none |
 |slpf + x-acme | ... |
 |slpf + x-troublemaker | ... |
 
