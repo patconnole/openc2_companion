@@ -22,3 +22,12 @@ Consumer_SLPF_ACME: Implements both of the above.
 |Consumer_SLPF| 200 OK; denied ipv4_net              | 200 OK; denied ipv4_net |
 |Consumer_ACME| 501; not implemented                                                        | UNDEFINED BEHAVIOR |
 |Consumer_SLPF_ACME|                                                             | |
+
+
+
+
+&#x2705; 1 OpenC2 Response in 1 HTTP Response     
+&#x274C; undefined;
+
+content_type: application/openc2-rsp+json;version=1.0
+Content, content_type, and msg_type are required in all Messages.
