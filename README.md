@@ -1,6 +1,6 @@
 # OpenC2 Companion Guide
 
-You've read the OpenC2 specs, and even wrote a quick Consumer to try out. Now what?
+You've read (*most of*) the OpenC2 specs, and even wrote a quick Consumer to try out. Now what?
 
 Well, here is an informal guide to OpenC2.
 
