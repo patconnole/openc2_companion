@@ -4,7 +4,7 @@
 
 Two fundamental things to understand are that:
 
-1. **Shotgunning Commands**: Producers may **SPAM** Consumers with commands that don't apply to those Consumers, and the Consumers need a way to know which commands are applicable to them.
+1. **Shotgun Commands**: Producers may **SPAM** Consumers with commands that don't apply to those Consumers, and the Consumers need a way to know which commands are applicable to them.
 1. **Multiple Actuator Profiles**: Consumers may implement more than one Actuator Profile.
 
 
