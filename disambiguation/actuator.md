@@ -11,13 +11,13 @@ Two fundamental things to understand are that:
 
 # Example Responses
 
-Say we have Consumers implement the following Actuator Profile(s):
+Say we have Consumers implementing the following Actuator Profile(s):
 
 |Actuator Profile(s)| Relevant Action-Target Pair |
 |-|-|
 |slpf |**"deny ipv4_net"** |
 |x-troublemaker | **"deny ipv4_net"**  |
-|x-acme | **"detonate x-acme:road_runner"** |
+|x-acme | "detonate x-acme:road_runner" |
 |slpf + x-acme | ... |
 |slpf + x-troublemaker | ... |
 
