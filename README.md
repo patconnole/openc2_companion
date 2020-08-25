@@ -1,9 +1,13 @@
-# openc2_companion
+# OpenC2 Companion Guide
 
- 
+You've read the OpenC2 specs, and even wrote a quick Consumer to try out. Now what?
+
+Well, here is an informal guide to OpenC2.
+
+
+## OpenC2 Message 
+
 :exclamation: Required
-
- 
 
 * **Transfer-Dependent Headers** : Known as [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in Language Spec. The presence and format of these are completely dependent on the Transfer Spec. For example, the HTTPS combines content_type and msg_type into one field.
   * **content_type** : Is this JSON?
