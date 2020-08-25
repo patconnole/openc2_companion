@@ -3,7 +3,7 @@
  
 :small_red_triangle: Required
 
-:small_blue_diamond" Optional
+:small_blue_diamond: Optional
 
  
 
