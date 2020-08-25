@@ -10,18 +10,18 @@ Well, here is an informal guide to the knitty-gritty of OpenC2.
 In an OpenC2 Command Message, the only required payload is an action and target:
 ```
 
-     Action value is always a single-word, eg "deny"
-            |
-            |
-            |
-            v
+     Action is always a single-word, eg "deny"
+           |
+           |
+           |
+           v
 "action":  "deny"
 "target":  {"ipv4_net" : ["192.168.17.0/24"] }
            ^             ^
            |             |
            |             |
            |             Type and value here depend on the target.
-     Target value is     For ipv4_net in json, it's a one-value array.
+     Target is           For ipv4_net in json, it's a one-value array.
      always a one-key          
      dictionary, eg 
      {"ipv4_net": ...}
@@ -32,7 +32,7 @@ In an OpenC2 Command Message, the only required payload is an action and target:
                                |
 "action": "deny"               v  
 "target": {"ipv4_connection" : {"protocol": "tcp",
-                                "src_addr": "1.2.3.4",
+                                "src_addr": "1.2.3.4"}
 ```
 
 
