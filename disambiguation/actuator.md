@@ -13,7 +13,7 @@ Two fundamental things to understand are that:
 
 Say we have Consumers implementing the following Actuator Profile(s):
 
-|Actuator Profile(s)| Relevant Action-Target Pair |
+|Actuator Profile(s)| Overlapping Action-Target Pair |
 |-|-|
 |slpf |**"deny ipv4_net"** |
 |x-troublemaker | **"deny ipv4_net"**  |
