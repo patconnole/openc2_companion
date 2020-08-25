@@ -1,6 +1,6 @@
 # Actuator Field
 
-### This field enables a Consumer to determine if it should act on a command.
+### This field helps a Consumer determine if it should act on a command.
 
 Two fundamental things to understand are that:
 
