@@ -27,7 +27,7 @@ Consumer receives **"deny ipv4_net"** with different values for the Actuator fie
 |             |"actuator": "" | "actuator": {"slpf".. |
 |-|:-|:-|
 |slpf| &#x2705; 200 OK             | &#x2705;200 OK |
-|x-troublemaker|&#x2705; 200 OK             |&#x274C; Behavior **and** Response are UNDEFINED |
+|x-troublemaker|&#x2705; 200 OK             |&#x274C; No work performed, Response is UNDEFINED |
 |x-acme| :negative_squared_cross_mark: 404; not found   |&#x274C; No work performed, but response is UNDEFINED |
 |slpf + x-acme| &#x2705; 200 OK                                                          |&#x2705; 200 OK |
 |slpf + x-troublemaker| &#x274C; Behavior **and** Response are UNDEFINED  |&#x2705; 200 OK |
