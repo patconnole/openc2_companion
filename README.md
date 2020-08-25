@@ -8,8 +8,8 @@ Content, content_type, and msg_type are required in all Messages.
  
 
 * **Transfer Dependent Headers**
-* [content_type]() : string; required by Language Spec, defined in Transfer Spec. This is part of your message header.
-* [msg_type]() : Defined in Transfer spec, may not be its own field. 
+  * [content_type]() : string; required by Language Spec, defined in Transfer Spec. This is part of your message header.
+  * [msg_type]() : Defined in Transfer spec, may not be its own field. 
  
 * **Content / Payload**
   * ["action"]() : string; single word
