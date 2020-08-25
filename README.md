@@ -15,5 +15,5 @@ Content, content_type, and msg_type are required in all Messages.
   * ["action"]() : string; single word
   * ["target"]() : nested-dictionary; only one key at root
   * ["args"]()  : nested-dictionary; multiple keys at root
-  * ["actuator"]() : nested-dictionary; only one key at root
+  * ["actuator"](/disambiguation/actuator.md) : nested-dictionary; only one key at root
   * ["command_id"]() : string
