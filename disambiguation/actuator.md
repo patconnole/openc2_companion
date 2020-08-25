@@ -36,5 +36,3 @@ Consumer receives **"deny ipv4_net"** with different values for the Actuator fie
 
 
 
-content_type: application/openc2-rsp+json;version=1.0
-Content, content_type, and msg_type are required in all Messages.
