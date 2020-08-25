@@ -12,11 +12,11 @@ Two fundamental things to understand are that:
 ### EXAMPLES
 |Consumer Implementing <br> Actuator Profile(s)| Example Command |
 |-|-|
-|**"slpf"** |**"deny ipv4_net"** |
-|**"x-good"** | **"detonate x-good:road_runner"** |
-|**"x-bad"** | **"deny ipv4_net"**  |
-|**"slpf"** + **"x-good"** | |
-|**"slfp"** + **"x-bad"** | |
+|slpf |**"deny ipv4_net"** |
+|x-acme | **"detonate x-good:road_runner"** |
+|x-troublemaker | **"deny ipv4_net"**  |
+|slpf + x-acme | |
+|slpf + x-troublemaker |  |
 
 * Consumer_SLPF: **"slpf"**, including command **"deny ipv4_net"**
 * Consumer_GOOD: **"x-good"**, including command **"detonate x-good:road_runner"**
