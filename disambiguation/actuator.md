@@ -9,7 +9,7 @@ Two fundamental things to understand are that:
 
 
 
-### EXAMPLES
+### Example Consumers
 |Consumer Implementing <br> Actuator Profile(s)| Example Action-Target Pair |
 |-|-|
 |slpf |**"deny ipv4_net"** |
