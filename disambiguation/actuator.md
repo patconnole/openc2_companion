@@ -10,6 +10,13 @@ Two fundamental things to understand are that:
 
 
 ### EXAMPLES
+|Consumer Implementing <br> Actuator Profile(s)| Example Command |
+|-|-|
+|**"slpf"** |**"deny ipv4_net"** |
+|**"x-good"** | **"detonate x-good:road_runner"** |
+|**"x-bad"** | **"deny ipv4_net"**  |
+|**"slpf"** + **"x-good"** | |
+|**"slfp"** + **"x-bad"** | |
 
 * Consumer_SLPF: **"slpf"**, including command **"deny ipv4_net"**
 * Consumer_GOOD: **"x-good"**, including command **"detonate x-good:road_runner"**
@@ -19,9 +26,10 @@ Two fundamental things to understand are that:
 
 |             |"action": "deny" <br> "target": {"ipv4_net".. <br> "actuator": "" | "action": "deny" <br> "target": {"ipv4_net".. <br> "actuator": {"slpf".. |
 |-|:-|:-|
-|Consumer_SLPF| 200 OK             | 200 OK |
-|Consumer_ACME| 501; not implemented                                                        | No work performed, but response is UNDEFINED |
-|Consumer_SLPF_ACME| 200 OK                                                          | 200 OK |
+|slpf| 200 OK             | 200 OK |
+|acme| 501; not implemented                                                        | No work performed, but response is UNDEFINED |
+|slpf + acme| 200 OK                                                          | 200 OK |
+|slpf + acme| 200 OK                                                          | 200 OK |
 
 
 
