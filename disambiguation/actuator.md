@@ -19,7 +19,7 @@ Two fundamental things to understand are that:
 |slpf + x-acme | ... |
 |slpf + x-troublemaker | ... |
 
-#### Response Behavior Upon Receiving "deny ipv4_net"
+#### Consumer receives "deny ipv4_net" with different values for the Actuator field:
 
 
 |             |"actuator": "" | "actuator": {"slpf".. |
