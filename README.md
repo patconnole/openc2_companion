@@ -11,8 +11,8 @@
   * many more that dependent on the Transfer Spec
  
   * **Content / Payload**
-    * :exclamation: **"action"** : string; single word
-    * :exclamation: **"target"** : nested-dictionary; only one key at root
-    *   **"args"**  : nested-dictionary; multiple keys at root
-    *   **"actuator"** : nested-dictionary; only one key at root. [Disambiguation](/disambiguation/actuator.md)
-    *   **"command_id"** : string
+    * **"action"** :exclamation:  : string; single word
+    * **"target"** :exclamation:  : nested-dictionary; only one key at root
+    * **"args"**  : nested-dictionary; multiple keys at root
+    * **"actuator"** : nested-dictionary; only one key at root. [Disambiguation](/disambiguation/actuator.md)
+    * **"command_id"** : string
