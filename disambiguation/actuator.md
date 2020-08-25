@@ -15,11 +15,11 @@ Say we have Consumers implementing the following Actuator Profile(s):
 
 |Actuator Profile(s)| Overlapping Action-Target Pairs |
 |-|-|
-|slpf |deny ipv4_net |
-|x-troublemaker | deny ipv4_net  |
-|x-acme | none |
-|slpf + x-acme | ... |
-|slpf + x-troublemaker | ... |
+|slpf | n/a |
+|x-troublemaker | n/a  |
+|x-acme | n/a |
+|slpf + x-acme | none |
+|slpf + x-troublemaker | deny ipv4_net |
 
 
 #### Response Behavior
