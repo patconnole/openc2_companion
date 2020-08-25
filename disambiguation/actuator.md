@@ -10,7 +10,7 @@ Two fundamental things to understand are that:
 
 
 ### EXAMPLES
-|Consumer Implementing <br> Actuator Profile(s)| Example Command |
+|Consumer Implementing <br> Actuator Profile(s)| Example Action-Target Pair |
 |-|-|
 |slpf |**"deny ipv4_net"** |
 |x-troublemaker | **"deny ipv4_net"**  |
@@ -25,7 +25,7 @@ Two fundamental things to understand are that:
 * Consumer_SLPF_GOOD: **"slpf"** + **"x-good"**
 * Consumer_SLPF_BAD: **"slfp"** + **"x-bad"**
 
-|             |"action": "deny" <br> "target": {"ipv4_net".. <br> "actuator": "" | "action": "deny" <br> "target": {"ipv4_net".. <br> "actuator": {"slpf".. |
+|             |"deny" <br> {"ipv4_net".. <br> "actuator": "" | "deny" <br> {"ipv4_net".. <br> "actuator": {"slpf".. |
 |-|:-|:-|
 |slpf| 200 OK             | 200 OK |
 |x-troublemaker| 200 OK             | 200 OK |
