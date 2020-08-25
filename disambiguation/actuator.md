@@ -11,9 +11,9 @@ Two fundamental things to understand are that:
 
 # Example Responses
 
-Say we have the following Consumers:
+Say we have Consumers implement the following Actuator Profile(s):
 
-|Consumer Implementing <br> Actuator Profile(s)| Relevant Action-Target Pair |
+|Actuator Profile(s)| Relevant Action-Target Pair |
 |-|-|
 |slpf |**"deny ipv4_net"** |
 |x-troublemaker | **"deny ipv4_net"**  |
@@ -35,8 +35,6 @@ Consumer receives **"deny ipv4_net"** with different values for the Actuator fie
 
 
 
-&#x2705; 1 OpenC2 Response in 1 HTTP Response     
-&#x274C; undefined;
 
 content_type: application/openc2-rsp+json;version=1.0
 Content, content_type, and msg_type are required in all Messages.
