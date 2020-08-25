@@ -28,9 +28,9 @@ Consumer receives **"deny ipv4_net"** with different values for the Actuator fie
 |-|:-|:-|
 |slpf| &#x2705; 200 OK             | &#x2705;200 OK |
 |x-troublemaker|&#x2705; 200 OK             |&#x2705; 200 OK |
-|x-acme| &#x2705; 501; not implemented                                                        |&#x2705; No work performed, but response is UNDEFINED |
+|x-acme| &#x2705; 501; not implemented                                                        |&#x274C; No work performed, but response is UNDEFINED |
 |slpf + x-acme| &#x2705; 200 OK                                                          |&#x2705; 200 OK |
-|slpf + x-troublemaker| &#x2705;Behavior **and** Response are UNDEFINED  |&#x2705; 200 OK |
+|slpf + x-troublemaker| &#x274C;Behavior **and** Response are UNDEFINED  |&#x2705; 200 OK |
 
 
 
