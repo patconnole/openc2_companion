@@ -38,9 +38,13 @@ In an OpenC2 Command Message, the only required payload is an action and target:
 ```
 
 
-Ok, we've covered the minimum payload. Anything else to 
+Ok, we've covered the minimum payload. Anything else we need to be up to spec?
 
-Yes! The forgotten children of OpenC2: the headers. In the Language Spec, they're known as Common Message Elements, and their presense and format is completely dependent on what Transport you are using. When sending the above examples over HTTP, you need to include
+Yes! The forgotten children of OpenC2: the headers. In the Language Spec, they're known as Common Message Elements, and their presense and format is completely dependent on what Transport you are using. When sending the above examples over HTTP, you need to include the following header:
+    
+    Content-type: application/openc2-cmd+json;version=1.0
+    
+That header combines TWO Common Message Elements: content_type and msg_type. You would only know this by reading the HTTPS Transfer Spec.
 
 
 * **Transfer-Dependent Headers** : Known as [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in Language Spec. The presence and format of these are completely dependent on the Transfer Spec. For example, the HTTPS combines content_type and msg_type into one field.
