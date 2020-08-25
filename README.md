@@ -12,7 +12,7 @@
  
 * **Content / Payload**
   * **"action"** :exclamation:  : string; single word
-  * **"target"** :exclamation:  : nested-dictionary; only one key at root
-  * **"args"**  : nested-dictionary; multiple keys at root
-  * **"actuator"** : nested-dictionary; only one key at root. [Disambiguation](/disambiguation/actuator.md)
+  * **"target"** :exclamation:  : nested-dictionary; only one key at root. eg "target" : {"ipv4_net": ...}
+  * **"args"**  : nested-dictionary; multiple keys at root. eg "args" : {"response_requested" : ..., "duration" : ...}
+  * **"actuator"** : nested-dictionary; only one key at root. eg "actuator" : {"slpf": ...} [Actuator Field Disambiguation](/disambiguation/actuator.md)
   * **"command_id"** : string
