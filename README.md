@@ -10,34 +10,34 @@ Well, here is an informal guide to the knitty-gritty of OpenC2.
 In an OpenC2 Command Message, the only required payload is an action and target:
 ```
 
- Action value is always a single-word, eg "deny"
+     Action value is always a single-word, eg "deny"
             |
             |
             |
             v
 "action":  "deny"
-"target":  { "ipv4_net" : ["192.168.17.0/24"] }
-              ^           ^
-              |           |
-              |           |
-              |           Type and value here depend on the target.
-     Target value is      For ipv4_net in json, it's a one-value array.
+"target":  {"ipv4_net" : ["192.168.17.0/24"] }
+           ^             ^
+           |             |
+           |             |
+           |             Type and value here depend on the target.
+     Target value is     For ipv4_net in json, it's a one-value array.
      always a one-key          
      dictionary, eg 
      {"ipv4_net": ...}
                               We could also have a another dictionary, 
                               as with target ipv4_connection:
-                                |
-                                |
-                                v
-"action": "deny"                  
-"target": { "ipv4_connection" : {"protocol": "tcp",
+                               |
+                               |
+                               |
+"action": "deny"               v  
+"target": {"ipv4_connection" : {"protocol": "tcp",
                                  "src_addr": "1.2.3.4",
 ```
 
 
 
-:exclamation: Required
+
 
 * **Transfer-Dependent Headers** : Known as [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in Language Spec. The presence and format of these are completely dependent on the Transfer Spec. For example, the HTTPS combines content_type and msg_type into one field.
   * **content_type** : Is this JSON?
@@ -45,8 +45,8 @@ In an OpenC2 Command Message, the only required payload is an action and target:
   * ... many more that are dependent on the Transfer Spec.
  
 * **Content / Payload**
-  * **"action"** :exclamation:  : string; single word
-  * **"target"** :exclamation:  : one-key-dictionary, with its value dependent on the target. eg "target" : {"ipv4_net": ...}
-  * **"args"**  : nested-dictionary; multiple-key-dictionary eg "args" : {"response_requested" : ..., "duration" : ...}
+  * **"action"** : string; single word
+  * **"target"** : one-key-dictionary, with its value dependent on the target. eg "target" : {"ipv4_net": ...}
+  * **"args"** : nested-dictionary; multiple-key-dictionary eg "args" : {"response_requested" : ..., "duration" : ...}
   * **"actuator"** : nested-dictionary; one-key-dictionary, with its value dependent on the target eg "actuator" : {"slpf": ...} [Actuator Field Disambiguation](/disambiguation/actuator.md)
   * **"command_id"** : string
