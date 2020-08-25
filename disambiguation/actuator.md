@@ -11,7 +11,7 @@ Two fundamental things to understand are that:
 
 # Example Responses
 
-#### Say we have the following Consumers:
+Say we have the following Consumers:
 
 |Consumer Implementing <br> Actuator Profile(s)| Relevant Action-Target Pair |
 |-|-|
@@ -21,7 +21,7 @@ Two fundamental things to understand are that:
 |slpf + x-acme | ... |
 |slpf + x-troublemaker | ... |
 
-#### Consumer receives "deny ipv4_net" with different values for the Actuator field:
+Consumer receives **"deny ipv4_net"** with different values for the Actuator field:
 
 
 |             |"actuator": "" | "actuator": {"slpf".. |
