@@ -18,14 +18,9 @@ Two fundamental things to understand are that:
 |slpf + x-acme | |
 |slpf + x-troublemaker |  |
 
+#### Consumer receives 'deny ipv4_net'
 
-* Consumer_SLPF: **"slpf"**, including command **"deny ipv4_net"**
-* Consumer_BAD: **"x-bad"**, including command **"deny ipv4_net"**
-* Consumer_GOOD: **"x-good"**, including command **"locate x-good:road_runner"**
-* Consumer_SLPF_GOOD: **"slpf"** + **"x-good"**
-* Consumer_SLPF_BAD: **"slfp"** + **"x-bad"**
-
-|             |deny ipv4_net.. <br> "actuator": "" | deny ipv4_net.. <br> "actuator": {"slpf".. |
+|             |"actuator": "" | "actuator": {"slpf".. |
 |-|:-|:-|
 |slpf| 200 OK             | 200 OK |
 |x-troublemaker| 200 OK             | 200 OK |
