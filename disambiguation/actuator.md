@@ -17,9 +17,9 @@ Two fundamental things to understand are that:
 
 |             |"action": "deny" <br> "target": {"ipv4_net".. <br> "actuator": "" | "action": "deny" <br> "target": {"ipv4_net".. <br> "actuator": {"slpf".. |
 |-|:-|:-|
-|Consumer_SLPF| 200 OK; denied ipv4_net              | 200 OK; denied ipv4_net |
-|Consumer_ACME| 501; not implemented                                                        | UNDEFINED BEHAVIOR |
-|Consumer_SLPF_ACME|                                                             | |
+|Consumer_SLPF| 200 OK             | 200 OK |
+|Consumer_ACME| 501; not implemented                                                        | No work performed, but response is UNDEFINED |
+|Consumer_SLPF_ACME| 200 OK                                                          | 200 OK |
 
 
 
