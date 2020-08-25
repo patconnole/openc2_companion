@@ -13,13 +13,13 @@ Two fundamental things to understand are that:
 
 Say we have Consumers implementing the following Actuator Profile(s):
 
-|Actuator Profile(s)| Overlapping Action-Target Pairs |
-|-|-|
-|slpf |- |
-|x-troublemaker | -  |
-|x-acme | - |
-|slpf + x-acme | none |
-|slpf + x-troublemaker | deny ipv4_net |
+|Actuator Profile(s)| Description | Overlapping Action-Target Pairs |
+|-|-|-|
+|slpf | Stateless Packet Filter | -|
+|x-troublemaker | Unknown, but supports deny ipv4_net  | - |
+|x-acme | RoadRunner Hunting | - |
+|slpf + x-acme | - | none |
+|slpf + x-troublemaker | - | deny ipv4_net |
 
 
 ### Response Behavior with Command "deny ipv4_net"
