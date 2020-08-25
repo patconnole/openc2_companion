@@ -21,10 +21,10 @@ In an OpenC2 Command Message, the only required payload is an action and target:
               |           |
               |           |
               |           Type and value here depend on the target.
-  Target value is         For ipv4_net in json, it's a one-value array.
-  always a one-key          
-  dictionary, eg 
-  {"ipv4_net": ...}
+     Target value is      For ipv4_net in json, it's a one-value array.
+     always a one-key          
+     dictionary, eg 
+     {"ipv4_net": ...}
                               We could also have a another dictionary, 
                               as with target ipv4_connection:
                                 |
