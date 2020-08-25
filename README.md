@@ -32,7 +32,7 @@ In an OpenC2 Command Message, the only required payload is an action and target:
                                |
 "action": "deny"               v  
 "target": {"ipv4_connection" : {"protocol": "tcp",
-                                 "src_addr": "1.2.3.4",
+                                "src_addr": "1.2.3.4",
 ```
 
 
