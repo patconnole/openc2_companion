@@ -39,6 +39,21 @@ The forgotten children of OpenC2: the headers. They're called Common Message Ele
 That header combines TWO Common Message Elements: content_type and msg_type. You would only know this by reading the HTTPS Transfer Spec.
 
 
+# Command: Required
+
+What commands can your Producer send to your Consumer? There is always one command that is required to implemented on your Consumers:
+
+     query features
+     
+This is probably the first command your Producer will send out. The Response will tell you everything you need to know about the Consumer that received the Command, including what other commands it implements. Where are those commands defined though?
+
+
+# Actuator Profiles
+
+This is where the meaning
+
+
+This is defined in a specification called an Actuator Profile. This spec defines 
 
 # Command: Action/Target Pair
 
