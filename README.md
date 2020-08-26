@@ -25,7 +25,7 @@ BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF
 * Commands are sent by Producers to Consumers
 * Responses are sent by Consumers to Producers
 
-Notice how we didn't say 
+Again, notice how we didn't mention anything about Tranfer, Serialization, or even what the Commands are yet?
 
 
 ## Action + Target = Pair
