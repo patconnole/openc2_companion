@@ -20,14 +20,14 @@ Instead, everything related to Transfer Protocol, Serialization, Commands and ev
 BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF WHAT OPENC2 IS. You will never find one document that tells you everything you need. Instead, you need to know your Transfer, Serialization, Commands, and what they're all running on ahead of time, and figure out how they work together yourself.
 
 
-# Command + Response
+# Messages: Command or Response
 
-There are two types of messages:
+An OpenC2 Message contains a Command OR Response.
 
-* **Commands** are sent by Producers to Consumers
-* **Responses** are sent by Consumers to Producers
+* **Commands** are sent by Producers to Consumers. There can only be ONE Command in a Message.
+* **Responses** are sent by Consumers to Producers. There can only be ONE Response in a Message
 
-Again, notice how we didn't mention anything about Tranfer, Serialization, or even what the Commands are yet?
+Again, notice how we didn't mention anything about Tranfer, Serialization, or even what the Commands are yet? We also haven't said how many Responses are generated for any Commands.
 
 
 # Command: Action/Target Pair
