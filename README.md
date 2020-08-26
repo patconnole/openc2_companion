@@ -22,13 +22,15 @@ BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF
 
 # Command + Response
 
-* Commands are sent by Producers to Consumers
-* Responses are sent by Consumers to Producers
+There are two types of messages:
+
+* **Commands** are sent by Producers to Consumers
+* **Responses** are sent by Consumers to Producers
 
 Again, notice how we didn't mention anything about Tranfer, Serialization, or even what the Commands are yet?
 
 
-## Command: Action + Target = Pair
+# Command: Action/Target Pair
 
 The meat of any OpenC2 Message is the payload; known as the "Content" of a message in the Language Spec.
 
