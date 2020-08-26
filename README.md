@@ -20,14 +20,24 @@ Instead, everything related to Transfer Protocol, Serialization, Commands and ev
 BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF WHAT OPENC2 IS. You will never find one document that tells you everything you need. Instead, you need to know your Transfer, Serialization, Commands, and what they're all running on ahead of time, and figure out how they work together yourself.
 
 
-# Messages: Command or Response
+# Message: Command or Response
 
-An OpenC2 Message contains a Command OR Response.
+An OpenC2 Message is a Command OR Response.
 
 * **Commands** are sent by Producers to Consumers. There can only be ONE Command in a Message.
 * **Responses** are sent by Consumers to Producers. There can only be ONE Response in a Message
 
 Again, notice how we didn't mention anything about Tranfer, Serialization, or even what the Commands are yet? We also haven't said how many Responses are generated for any Commands.
+
+
+# Message: Headers
+
+The forgotten children of OpenC2: the headers. They're called Common Message Elements in the Language Spec, and their presense and format is completely dependent on what Transfer you are using. When sending JSON commands over HTTPS for example, you need to include the following header:
+    
+    Content-type: application/openc2-cmd+json;version=1.0
+    
+That header combines TWO Common Message Elements: content_type and msg_type. You would only know this by reading the HTTPS Transfer Spec.
+
 
 
 # Command: Action/Target Pair
