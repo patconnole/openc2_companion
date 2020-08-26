@@ -32,14 +32,21 @@ Again, notice how we didn't mention anything about Tranfer, Serialization, or ev
 
 # Message: Headers
 
-The forgotten children of OpenC2: the headers. They're called Common Message Elements in the Language Spec, and their presense and format is completely dependent on what Transfer you are using. When sending JSON commands over HTTPS for example, you need to include the following header:
+The forgotten children of OpenC2: the headers. They're called **Common Message Elements** in the Language Spec, and their presense and format is completely dependent on what Transfer you are using. However, some *look* like HTTP headers, and become so when used with HTTPS Transfer, eg:
+
+Here is a Common Message Element **"content_type"**, cased and dashed appropriately for HTTPS:
+
 ```
-                        Ooh, this 
-                        message is an
-                        OpenC2 Command!
-                          |
-                          |
-                          v                           
+
+
+
+
+                   This message is an
+                   OpenC2 Command!
+                          |               Using this
+                          |               OpenC2 Version
+                          |               |
+                          v               v           
 
 Content-type: application/openc2-cmd+json;version=1.0
                     
@@ -49,11 +56,13 @@ Content-type: application/openc2-cmd+json;version=1.0
                                    Serialized with JSON!
 ```
     
-That header combines TWO Common Message Elements: content_type and msg_type. You would only know this by reading the HTTPS Transfer Spec.
+How did we know how to format it? You would only know by reading the HTTPS Transfer Spec.
 
 # Action/Target Pair
 
-This is the bread-and-butter of OpenC2. 
+This is the bread-and-butter of OpenC2, the biggest selling point, and what makes it so simple and powerful. 
+
+
 The meat of any OpenC2 Message is the payload; known as the "Content" of a message in the Language Spec.
 
 In an OpenC2 Command Message, the only required payload is an **action** and **target** pair.
