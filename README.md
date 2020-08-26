@@ -15,7 +15,7 @@ Notice how nobody has said:
 
      The Producer POSTS a JSON command over TLS and expects a 200 OK on success.
      
-Instead, everything related to Transfer Protocol, Serialization, and even Commands is abstractly defined. This way a system of Producers and Consumers could be OpenC2 compliant no matter if they're using HTTPS, MQTT, JSON, CBOR, etc. The specific Transfer, Serialization, and set of Commands are composed together with their own specs. 
+Instead, everything related to Transfer Protocol, Serialization, and even Commands is abstractly defined or referenced in the OpenC2 Language. This way a system of Producers and Consumers could be OpenC2 compliant no matter if they're using HTTPS, MQTT, JSON, CBOR, etc. The specific Transfer, Serialization, and set of Commands are composed together with their own specs. 
 
 BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF WHAT OPENC2 IS. You will never find one document that tells you everything you need. Instead, you need to know your Transfer, Serialization, Commands ahead of time, and figure out how they work together yourself.
 
