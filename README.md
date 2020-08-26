@@ -6,7 +6,7 @@ Well, here is an informal guide to the knitty-gritty of OpenC2.
 
 
 # The Basics
-## Producer + Consumer
+# Producer + Consumer
 
 * **Producers** send Commands to Consumers. If you want to defend your network, your network nodes will be OpenC2 Consumers, awaiting commands from your Producer(s). The Producer could be a command-line script that you run manually, or a billion dollar orchestration system. We don't care.
 * **Consumers** act when given a Command, and reply to Producers with Responses.
@@ -20,7 +20,7 @@ Instead, everything related to Transfer Protocol, Serialization, Commands and ev
 BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF WHAT OPENC2 IS. You will never find one document that tells you everything you need. Instead, you need to know your Transfer, Serialization, Commands, and what they're all running on ahead of time, and figure out how they work together yourself.
 
 
-## Command + Response
+# Command + Response
 
 * Commands are sent by Producers to Consumers
 * Responses are sent by Consumers to Producers
@@ -28,7 +28,7 @@ BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF
 Again, notice how we didn't mention anything about Tranfer, Serialization, or even what the Commands are yet?
 
 
-## Action + Target = Pair
+## Command: Action + Target = Pair
 
 The meat of any OpenC2 Message is the payload; known as the "Content" of a message in the Language Spec.
 
