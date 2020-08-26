@@ -27,12 +27,12 @@ BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF
 
 The meat of any OpenC2 Message is the payload; known as the "Content" of a message in the Language Spec.
 
-In an OpenC2 Command Message, the only required payload is an **action** and **target**.
+In an OpenC2 Command Message, the only required payload is an **action** and **target** pair.
 
-The basic syntax is shown below. One reason the syntax and format of commands doesn't feel too well-defined in the specs is because the specs don't define them directly, but instead reference other specifications, ie JSON. The specs say "OpenC2 is agnostic of serialization." But also, "You must support JSON". So we are left with a lot of examples in JSON, with an asterisk next to them saying "This section is non-normative". Soooooo, for the sake of ease - Let's assume we're always talking about JSON.
+The basic syntax is shown below. One reason the syntax and format of commands doesn't feel too well-defined in the specs is, again, they're not defined directly, but instead reference other specifications, ie JSON. The specs say "OpenC2 is agnostic of serialization." But also, "You must support JSON". So we are left with a lot of examples in JSON, with an asterisk next to them saying "This section is non-normative". Soooooo, for the sake of ease and to actually implement something, let's assume OpenC2 messages are always JSON.
 
 
-Back to the action-target pair:
+Back to the action/target pair:
 
 ```
 
