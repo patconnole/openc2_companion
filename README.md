@@ -23,7 +23,7 @@ BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF
 
 
 
-## ACTION + TARGET
+## Action + Target = Pair
 
 The meat of any OpenC2 Message is the payload; known as the "Content" of a message in the Language Spec.
 
