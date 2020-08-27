@@ -113,7 +113,7 @@ Back to the action/target pair:
      always a one-key          
      dictionary, eg 
      {"ipv4_net": ...}
-                              We could also have a another dictionary, 
+                              We could also have another dictionary, 
                               as with target ipv4_connection:
                                |
                                |
