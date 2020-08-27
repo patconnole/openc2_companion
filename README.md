@@ -7,16 +7,16 @@ Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping i
 
  
 **Command Payload**
-* **"action"** : `Required string; single word`
+* **"action"** : `Required string; single-word eg "deny"`
 * **"target"** : `Required one-key-dictionary, with its value dependent on the key. eg {"ipv4_net": ...}`
 * **"args"** : `Multiple-key-dictionary eg {"response_requested" : ..., "duration" : ...}`
 * **"actuator"** : `One-key-dictionary, with its value dependent on the key eg {"slpf": ...}` [Actuator Field Disambiguation](/disambiguation/actuator_field.md)
 * **"command_id"** : `String`
 
 **Response Payload**
-* **"status"** : required. number, eg 200
-* **"status_text"** : optional. string, "the command succeeded because..."
-* **"results"** : optional. 
+* **"status"** : `Required number; eg 200`
+* **"status_text"** : `String; eg "the command succeeded because..."`
+* **"results"** : `Multiple-key-dictionary ...`
 
 And don't forget the Message headers!
 
