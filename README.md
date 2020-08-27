@@ -118,7 +118,7 @@ Back to the action/target pair:
                                v 
 "action": "deny" 
 "target": {"ipv4_connection" : {"protocol": "tcp",
-                                "src_addr": "1.2.3.4"}
+                                "src_addr": "1.2.3.4"} }
 ```
 
 **The "action" field is obviously simple**; it's just one word, and can only be a word from the actions listed in the Language Spec.
@@ -129,16 +129,16 @@ Back to the action/target pair:
 2. Can't find any? Look for the ***type*** of "ipv4_net" in the Language Spec.
 3. That type is ***IPv4-Net***. Notice the capitalization and dash.
 4. Search the Language Spec for that.
-5. We find 6 references. Look for one that begins with ***Type: IPv4-Net (Array..."
+5. We find 6 references. Look for one that begins with ***Type: IPv4-Net (Array..."***
 6. In that table we see 2 values: ***IPv4-Addr*** and ***Integer***
 7. Search the Language Spec for each of those.
-8. Just kidding. Your next move is to read the text *above* that table in step 5.
+8. Just kidding. Your next move is to read the text *above* that table.
 9. The 4th line there says, "JSON serialization of an IPv4 address range SHALL use the 'dotted/slash'
 10. Ok, now we know to use "192.168..../24" style addresses, but how do we know to put it into a JSON array?
-11. Go back to the first line section "3.4.1.9 IPv4 Address Range". It reads "An IPv4 address range... consists of two values, an IPv4 address and a prefix."
+11. Go back to the first line section ***"3.4.1.9 IPv4 Address Range"***. It reads "An IPv4 address range... consists of two values, an IPv4 address and a prefix."
 12. From there, we can guess that we are dealing with an array because of "..two values..", and the fact that we saw the word "Array" in ***Type: IPv4-Net (Array...***
 
-So now, we are PRETTY SURE that a JSON formatted "ipv4_net" value is
+So now, we are **PRETTY SURE** that a JSON formatted "ipv4_net" value is
 
     ["192.168.17.0/24"]
 
