@@ -18,12 +18,8 @@ Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping i
 * **"status_text"** : `String; eg "the command succeeded because..."`
 * **"results"** : `Multiple-key-dictionary ...`
 
-And don't forget the Message headers!
+And don't forget the Message headers, not part of the payload!
 
-**Headers** : Known as [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in Language Spec, their format and use depends on the Transfer Spec.
-* **content_type** : Is this JSON?
-* **msg_type** : Is this an OpenC2 Command or Response?
-* ... many more that are dependent on the Transfer Spec.
 
 # The Basics
 # Producer + Consumer
@@ -52,7 +48,14 @@ Again, notice how we didn't mention anything about Transfer, Serialization, or e
 
 # Message: Headers
 
-The forgotten children of OpenC2: the headers. They're called **Common Message Elements** in the Language Spec, and their presense and format is completely dependent on what Transfer you are using. However, some *look* like HTTP headers, and become so when used with HTTPS Transfer, eg:
+The forgotten children of OpenC2: the headers. They're called [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in the Language Spec, and their presense and format is completely dependent on what Transfer you are using.
+
+* **content_type** : Is this JSON?
+* **msg_type** : Is this an OpenC2 Command or Response?
+* ... many more that are dependent on the Transfer Spec.
+
+Notice that some *look* like HTTP headers; they become so when used with HTTPS Transfer, eg:
+
 
 Here is a Common Message Element **"content_type"**, cased and dashed appropriately for HTTPS:
 
