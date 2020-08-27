@@ -50,8 +50,8 @@ Again, notice how we didn't mention anything about Transfer, Serialization, or e
 
 The forgotten children of OpenC2: the headers. They're called [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in the Language Spec, and their presense and format is completely dependent on what Transfer you are using.
 
-* **content_type** : Is this JSON?
-* **msg_type** : Is this an OpenC2 Command or Response?
+* **content_type** : Is the payload JSON?
+* **msg_type** : Is the payload OpenC2 Command or Response?
 * ... many more that are dependent on the Transfer Spec.
 
 Notice that some *look* like HTTP headers; they become so when used with HTTPS Transfer, eg:
@@ -60,10 +60,6 @@ Notice that some *look* like HTTP headers; they become so when used with HTTPS T
 Here is a Common Message Element **"content_type"**, cased and dashed appropriately for HTTPS:
 
 ```
-
-
-
-
                    This message is an
                    OpenC2 Command!
                           |               Using this
@@ -83,11 +79,8 @@ How did we know how to format it? You would only know by reading the HTTPS Trans
 
 # Command: Action/Target Pair
 
-This is the bread-and-butter of OpenC2, the biggest selling point, and what makes it so simple and powerful.
-
-The meat of any OpenC2 Message is the payload; known as the "Content" of a message in the Language Spec.
-
 In an OpenC2 **Command** Message, the only required payload is an **action** and **target** pair.
+This is the bread-and-butter of OpenC2, the biggest selling point, and what makes it so simple and powerful.
 
 The basic syntax is shown below. One reason the syntax and format of commands doesn't feel too well-defined in the specs is, again, they're not defined directly, but instead reference other specifications, ie JSON. The specs say "OpenC2 is agnostic of serialization." But also, "You must support JSON". So we are left with a lot of examples in JSON, with an asterisk next to them saying "This section is non-normative". Soooooo, for the sake of ease and to actually implement something, let's assume OpenC2 messages are always JSON.
 
@@ -95,7 +88,6 @@ The basic syntax is shown below. One reason the syntax and format of commands do
 Back to the action/target pair:
 
 ```
-
      Action is always a single-word, eg "deny"
            |
            |
