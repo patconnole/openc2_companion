@@ -47,7 +47,7 @@ An OpenC2 Message is a Command OR Response.
 * **Commands** are sent by Producers to Consumers. There can only be ONE Command in a Message.
 * **Responses** are sent by Consumers to Producers. There can only be ONE Response in a Message
 
-Again, notice how we didn't mention anything about Tranfer, Serialization, or even what the Commands are yet? We also haven't said how many Responses are generated for any Commands.
+Again, notice how we didn't mention anything about Transfer, Serialization, or even what the Commands are yet? We also haven't said how many Responses are generated for any Commands.
 
 
 # Message: Headers
