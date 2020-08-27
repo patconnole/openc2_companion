@@ -4,24 +4,26 @@ You've read *most of* the OpenC2 specs, and even wrote a quick Consumer to try o
 
 Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping into a lot of text, it will help to see the basic format of Commands and Responses:
 
-* **Transfer-Dependent Headers** : Known as [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in Language Spec.
-  * **content_type** : Is this JSON?
-  * **msg_type** : Is this an OpenC2 Command or Response?
-  * ... many more that are dependent on the Transfer Spec.
- 
-* **Command Content / Payload**
-  * **"action"** : required. string; single word
-  * **"target"** : required. one-key-dictionary, with its value dependent on the target. eg "target" : {"ipv4_net": ...}
-  * **"args"** : multiple-key-dictionary eg {"response_requested" : ..., "duration" : ...}
-  * **"actuator"** : one-key-dictionary, with its value dependent on the target eg {"slpf": ...} [Actuator Field Disambiguation](/disambiguation/actuator_field.md)
-  * **"command_id"** : string
 
-* **Response Content / Payload**
+ 
+* **Command Payload**
+  * **"action"** : Required string; single word
+  * **"target"** : Required one-key-dictionary, with its value dependent on the key. eg {"ipv4_net": ...}
+  * **"args"** : Multiple-key-dictionary eg {"response_requested" : ..., "duration" : ...}
+  * **"actuator"** : One-key-dictionary, with its value dependent on the key eg {"slpf": ...} [Actuator Field Disambiguation](/disambiguation/actuator_field.md)
+  * **"command_id"** : String
+
+* **Response Payload**
   * **"status"** : required. number, eg 200
   * **"status_text"** : optional. string, "the command succeeded because..."
   * **"results"** : optional. 
 
+And don't forget the Message headers!
 
+* **Transfer-Dependent Headers** : Known as [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in Language Spec.
+  * **content_type** : Is this JSON?
+  * **msg_type** : Is this an OpenC2 Command or Response?
+  * ... many more that are dependent on the Transfer Spec.
 
 # The Basics
 # Producer + Consumer
