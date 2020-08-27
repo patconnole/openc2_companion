@@ -9,8 +9,8 @@ Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping i
 **Command Payload**
 * **"action"** : `Required string; single-word eg "deny"`
 * **"target"** : `Required one-key-dictionary, with its value dependent on the key. eg {"ipv4_net": ...}`
-* **"args"** : `Multiple-key-dictionary eg {"response_requested" : ..., "duration" : ...}`
 * **"actuator"** : `One-key-dictionary, with its value dependent on the key eg {"slpf": ...}` [Actuator Field Disambiguation](/disambiguation/actuator_field.md)
+* **"args"** : `Multiple-key-dictionary eg {"response_requested" : ..., "duration" : ...}`
 * **"command_id"** : `String`
 
 **Response Payload**
@@ -144,8 +144,19 @@ So now, we are **PRETTY SURE** that a JSON formatted "ipv4_net" value is
 
 Congratulations!
 
-# Command: Actuator Field
+# ~~Command: Actuator Field~~ Wait.
 
+Before we look at the **actuator** field of an OpenC2 Command, we need to know what an actuator is.
+
+**An actuator is an implementation of an Actuator Profile.**
+
+# Actuator Profile
+
+An Actuator Profile defines the set of commands and responses
+
+
+
+# Command: Actuator Field
 ### This field helps a Consumer determine if it should act on a command.
 
 Two fundamental things to understand are that:
