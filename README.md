@@ -4,7 +4,23 @@ You've read *most of* the OpenC2 specs, and even wrote a quick Consumer to try o
 
 Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping into a lot of text, it will help to see the basic format of Commands and Responses:
 
+**Command Payload**
+```
+"action"     : Required   :   string; single-word
+"target"     : Required   :   one-key-dictionary
+"actuator"   : Optional   :   one-key-dictionary
+"args"       : Optional   :   multiple-key-dictionary
+"command_id" : Optional   :   string
+```
 
+**Response Payload**
+```
+"status"      : Required
+"status_text" : Optional
+"results"     : Optional
+```
+
+And don't forget the Message headers, not part of the payload!
  
 **Command Payload**
 * **"action"** : `Required string; single-word eg "deny"`
