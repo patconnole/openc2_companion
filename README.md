@@ -7,11 +7,11 @@ Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping i
 
  
 **Command Payload**
-* **"action"** : Required string; single word
-* **"target"** : Required one-key-dictionary, with its value dependent on the key. eg {"ipv4_net": ...}
-* **"args"** : Multiple-key-dictionary eg {"response_requested" : ..., "duration" : ...}
-* **"actuator"** : One-key-dictionary, with its value dependent on the key eg {"slpf": ...} [Actuator Field Disambiguation](/disambiguation/actuator_field.md)
-* **"command_id"** : String
+* **"action"** : `Required string; single word`
+* **"target"** : `Required one-key-dictionary, with its value dependent on the key. eg {"ipv4_net": ...}`
+* **"args"** : `Multiple-key-dictionary eg {"response_requested" : ..., "duration" : ...}`
+* **"actuator"** : `One-key-dictionary, with its value dependent on the key eg {"slpf": ...}` [Actuator Field Disambiguation](/disambiguation/actuator_field.md)
+* **"command_id"** : `String`
 
 **Response Payload**
 * **"status"** : required. number, eg 200
@@ -20,10 +20,10 @@ Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping i
 
 And don't forget the Message headers!
 
-* **Transfer-Dependent Headers** : Known as [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in Language Spec.
-  * **content_type** : Is this JSON?
-  * **msg_type** : Is this an OpenC2 Command or Response?
-  * ... many more that are dependent on the Transfer Spec.
+**Headers** : Known as [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in Language Spec, their format and use depends on the Transfer Spec.
+* **content_type** : Is this JSON?
+* **msg_type** : Is this an OpenC2 Command or Response?
+* ... many more that are dependent on the Transfer Spec.
 
 # The Basics
 # Producer + Consumer
