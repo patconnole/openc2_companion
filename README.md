@@ -147,7 +147,8 @@ So now, we are **PRETTY SURE** that a JSON formatted "ipv4_net" value is
 
 Congratulations!
 
-# ~~Command: Actuator Field~~ Wait.
+# ~~Command: Actuator Field~~
+# Wait.
 
 Before we look at the **actuator** field of an OpenC2 Command, we need to know what an actuator is.
 
