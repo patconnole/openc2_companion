@@ -2,7 +2,25 @@
 
 You've read *most of* the OpenC2 specs, and even wrote a quick Consumer to try out. Now what?
 
-Well, here is an informal guide to the knitty-gritty of OpenC2.
+Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping into a lot of text, it will help to see the basic format of Commands and Responses:
+
+* **Transfer-Dependent Headers** : Known as [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in Language Spec.
+  * **content_type** : Is this JSON?
+  * **msg_type** : Is this an OpenC2 Command or Response?
+  * ... many more that are dependent on the Transfer Spec.
+ 
+* **Command Content / Payload**
+  * **"action"** : required. string; single word
+  * **"target"** : required. one-key-dictionary, with its value dependent on the target. eg "target" : {"ipv4_net": ...}
+  * **"args"** : multiple-key-dictionary eg {"response_requested" : ..., "duration" : ...}
+  * **"actuator"** : one-key-dictionary, with its value dependent on the target eg {"slpf": ...} [Actuator Field Disambiguation](/disambiguation/actuator_field.md)
+  * **"command_id"** : string
+
+* **Response Content / Payload**
+  * **"status"** : required. number, eg 200
+  * **"status_text"** : optional. string, "the command succeeded because..."
+  * **"results"** : optional. 
+
 
 
 # The Basics
@@ -58,14 +76,13 @@ Content-type: application/openc2-cmd+json;version=1.0
     
 How did we know how to format it? You would only know by reading the HTTPS Transfer Spec.
 
-# Action/Target Pair
+# Command: Action/Target Pair
 
-This is the bread-and-butter of OpenC2, the biggest selling point, and what makes it so simple and powerful. 
-
+This is the bread-and-butter of OpenC2, the biggest selling point, and what makes it so simple and powerful.
 
 The meat of any OpenC2 Message is the payload; known as the "Content" of a message in the Language Spec.
 
-In an OpenC2 Command Message, the only required payload is an **action** and **target** pair.
+In an OpenC2 **Command** Message, the only required payload is an **action** and **target** pair.
 
 The basic syntax is shown below. One reason the syntax and format of commands doesn't feel too well-defined in the specs is, again, they're not defined directly, but instead reference other specifications, ie JSON. The specs say "OpenC2 is agnostic of serialization." But also, "You must support JSON". So we are left with a lot of examples in JSON, with an asterisk next to them saying "This section is non-normative". Soooooo, for the sake of ease and to actually implement something, let's assume OpenC2 messages are always JSON.
 
@@ -101,6 +118,50 @@ Back to the action/target pair:
 "target": {"ipv4_connection" : {"protocol": "tcp",
                                 "src_addr": "1.2.3.4"}
 ```
+
+# Command: Actuator Field
+
+### This field helps a Consumer determine if it should act on a command.
+
+Two fundamental things to understand are that:
+
+1. **Shotgun Commands**: Producers may **SPAM** Consumers with commands that don't apply to those Consumers, and the Consumers need a way to know which commands are applicable to them.
+1. **Multiple Actuator Profiles**: Consumers may implement more than one Actuator Profile.
+
+
+
+# Examples
+
+Say we have Consumers implementing the following Actuator Profile(s):
+
+|Consumer |Actuator Profile(s)| Description | Overlapping Action-Target Pairs |
+|-|-|-|-|
+|1|slpf | Stateless Packet Filter | -|
+|2|x-troublemaker | Unknown, but supports deny ipv4_net  | - |
+|3|x-acme | RoadRunner Hunting | - |
+|4|slpf + x-acme | - | none |
+|5|slpf + x-troublemaker | - | deny ipv4_net |
+
+
+## deny ipv4_net
+...with different values for the Actuator field:
+
+
+|             |"actuator": "" | "actuator": {"slpf".. |
+|-|:-|:-|
+|slpf| &#x2705; 200 OK             | &#x2705;200 OK |
+|x-troublemaker|&#x2705; 200 OK             |&#x274C; No work performed, but Response is UNDEFINED |
+|x-acme| :negative_squared_cross_mark: 404; not found   |&#x274C; No work performed, but Response is UNDEFINED |
+|slpf + x-acme| &#x2705; 200 OK                                                          |&#x2705; 200 OK |
+|slpf + x-troublemaker| &#x274C; Behavior **and** Response are UNDEFINED  |&#x2705; 200 OK |
+
+
+
+
+
+
+
+
 
 # Command: Required
 
