@@ -172,6 +172,12 @@ It's not complicated, but one analogy that helps me is the following:
 
 In this analogy, the laptop is a Consumer, and the stickers advertise the Actuator Profiles it implements. The Windows sticker advertises an interface you are familiar with that has a "start" command. If there was a Blu-ray Disc sticker, you would expect to find a disc drive with an "open/close" command.
 
+Well, what are the stickers in OpenC2? There are three kinds:
+
+* **Discovered**: You send the Consumer a command called 'query-features', and it tells you the Actuator Profiles it implements.
+* **Predefined**: You **made** the Consumer, so you already know the Actuator Profiles it implements.
+* **Shotgun**   : You don't know what the Consumer implements, but you just send it commands and see what it does.
+
 
 # Command: Actuator Field
 ### This field helps a Consumer determine if it should act on a command.
