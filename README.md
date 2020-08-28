@@ -24,27 +24,9 @@ Fields:                                    JSON Example:
 "results"     : Optional                   "results"     : {"slpf" : {"rule_number": 1234}, "versions" : ["1.0"]}
 ```
 
-
-
-
-
-And don't forget the Message headers, not part of the payload!
+**Message Headers**
+Don't forget the Message headers, not part of the payload! What they are and how they're formatted are specified in the Transfer Spec.
  
-**Command Payload**
-* **"action"** : `Required string; single-word eg "deny"`
-* **"target"** : `Required one-key-dictionary, with its value dependent on the key. eg {"ipv4_net": ...}`
-* **"actuator"** : `One-key-dictionary, with its value dependent on the key eg {"slpf": ...}` [Actuator Field Disambiguation](/disambiguation/actuator_field.md)
-* **"args"** : `Multiple-key-dictionary eg {"response_requested" : ..., "duration" : ...}`
-* **"command_id"** : `String`
-
-**Response Payload**
-* **"status"** : `Required number; eg 200`
-* **"status_text"** : `String; eg "the command succeeded because..."`
-* **"results"** : `Multiple-key-dictionary ...`
-
-And don't forget the Message headers, not part of the payload!
-
-
 # The Basics
 # Producer + Consumer
 
