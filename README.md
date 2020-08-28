@@ -174,9 +174,9 @@ In this analogy, the laptop is a Consumer, and the stickers advertise the Actuat
 
 Well, what are the stickers in OpenC2? There are three kinds:
 
-* **Discovered**: You send the Consumer a command called 'query-features', and it tells you the Actuator Profiles it implements.
-* **Predefined**: You **made** the Consumer, so you already know the Actuator Profiles it implements.
-* **Shotgun**   : You don't know what the Consumer implements, but you just send it commands and see what it does.
+* **Discovered**: You send the Consumer a command called **'query-features'**, and it tells you the Actuator Profiles it implements.
+* **Pre-Shared**: You **configured** the Consumer, so you already know the Actuator Profiles it implements.
+* **Shotgun**   : You don't know what the Consumer implements, but you just send it commands because this is an emergency and we don't have time to play games.
 
 
 # Command: Actuator Field
