@@ -208,7 +208,7 @@ Say we have the following Actuator Profiles:
 | Actuator Profile | Description |
 |-|-|
 |slpf | Stateless Packet Filter |
-|x-troublemaker | Unknown, but supports deny ipv4_net  |
+|x-troublemaker | Unknown, but supports **deny ipv4_net**  |
 |x-acme | RoadRunner Hunting |
 
 And Consumers that implement them:
@@ -218,8 +218,8 @@ And Consumers that implement them:
 |1|slpf |  -|
 |2|x-troublemaker |  - |
 |3|x-acme |  - |
-|4|slpf + x-acme | none |
-|5|slpf + x-troublemaker | deny ipv4_net |
+|4|slpf + x-acme | **none** |
+|5|slpf + x-troublemaker | **deny ipv4_net** |
 
 We send these consumers the same command:
 
@@ -246,7 +246,7 @@ What does the Consumer do, assuming it processed the command successfully if abl
 |5|slpf + x-troublemaker| &#x274C; Behavior **and** Response are UNDEFINED  |&#x2705; 200 OK |
 
 
-
+From this, hopefully it's clear how you could use the actuator to your advantage, and also that you should avoid defining Consumers that contain duplicate action-target pairs.
 
 # Command ID vs Request ID
 
