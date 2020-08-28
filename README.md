@@ -6,11 +6,12 @@ Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping i
 
 **Command Payload**
 ```
-"action"     : Required   :   string; single-word
-"target"     : Required   :   one-key-dictionary
-"actuator"   : Optional   :   one-key-dictionary
-"args"       : Optional   :   multiple-key-dictionary
-"command_id" : Optional   :   string
+                                           JSON example:
+"action"     : Required                    "action"     : "deny"
+"target"     : Required                    "target"     : {"ipv4_net" : ["192.168.1.0/24"] }
+"actuator"   : Optional                    "actuator"   : {"slpf": {} }
+"args"       : Optional                    "args"       : {"response_requested" : "ack", "start_time" : 1534775460000 }
+"command_id" : Optional                    "command_id" : "12345"
 ```
 
 **Response Payload**
@@ -19,6 +20,10 @@ Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping i
 "status_text" : Optional
 "results"     : Optional
 ```
+
+
+
+
 
 And don't forget the Message headers, not part of the payload!
  
