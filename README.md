@@ -240,8 +240,8 @@ What does the Consumer do, assuming it processed the command successfully if abl
 | |             |"actuator": "" | "actuator": {"slpf".. |
 |-|-|:-|:-|
 |1|slpf| &#x2705; 200 OK             | &#x2705;200 OK |
-|2|x-troublemaker|&#x2705; 200 OK             |&#x274C; No work performed, but Response is UNDEFINED |
-|3|x-acme| :negative_squared_cross_mark: 404; not found   |&#x274C; No work performed, but Response is UNDEFINED |
+|2|x-troublemaker|&#x2705; 200 OK             |:negative_squared_cross_mark: 404; not found |
+|3|x-acme| :negative_squared_cross_mark: 404; not found   |:negative_squared_cross_mark: 404; not found |
 |4|slpf + x-acme| &#x2705; 200 OK                                                          |&#x2705; 200 OK |
 |5|slpf + x-troublemaker| &#x274C; Behavior **and** Response are UNDEFINED  |&#x2705; 200 OK |
 
