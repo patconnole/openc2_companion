@@ -201,7 +201,7 @@ Say we have Consumers implementing the following Actuator Profile(s):
 
 
 
-
+# Command ID vs Request ID
 
 # Command: Required
 
