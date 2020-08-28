@@ -214,7 +214,7 @@ Say we have the following Actuator Profiles:
 And Consumers that implement them:
 
 |Consumer |Actuator Profile(s)|  Duplicate Action-Target Pairs (besides query-features) |
-|-|-|-|-|
+|-|-|-|
 |1|slpf |  -|
 |2|x-troublemaker |  - |
 |3|x-acme |  - |
@@ -234,16 +234,16 @@ And sometimes we include the actuator field:
 "actuator" : {"slpf" : {}}
 ```
 
+What does the Consumer do? How does it responsd?
 
 
-
-|             |"actuator": "" | "actuator": {"slpf".. |
-|-|:-|:-|
-|slpf| &#x2705; 200 OK             | &#x2705;200 OK |
-|x-troublemaker|&#x2705; 200 OK             |&#x274C; No work performed, but Response is UNDEFINED |
-|x-acme| :negative_squared_cross_mark: 404; not found   |&#x274C; No work performed, but Response is UNDEFINED |
-|slpf + x-acme| &#x2705; 200 OK                                                          |&#x2705; 200 OK |
-|slpf + x-troublemaker| &#x274C; Behavior **and** Response are UNDEFINED  |&#x2705; 200 OK |
+| |             |"actuator": "" | "actuator": {"slpf".. |
+|-|-|:-|:-|
+|1|slpf| &#x2705; 200 OK             | &#x2705;200 OK |
+|2|x-troublemaker|&#x2705; 200 OK             |&#x274C; No work performed, but Response is UNDEFINED |
+|3|x-acme| :negative_squared_cross_mark: 404; not found   |&#x274C; No work performed, but Response is UNDEFINED |
+|4|slpf + x-acme| &#x2705; 200 OK                                                          |&#x2705; 200 OK |
+|5|slpf + x-troublemaker| &#x274C; Behavior **and** Response are UNDEFINED  |&#x2705; 200 OK |
 
 
 
