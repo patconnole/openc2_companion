@@ -132,7 +132,7 @@ Back to the action/target pair:
 
 **The "action" field is obviously simple**; it's just one word, and can only be a word from the actions listed in the Language Spec.
 
-**"target" is its own beast**.
+"target" is its own beast.
 
 For example, 
 
