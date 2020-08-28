@@ -126,7 +126,11 @@ Back to the action/target pair:
 
 **The "action" field is obviously simple**; it's just one word, and can only be a word from the actions listed in the Language Spec.
 
-**Target is its own beast**. For example, how did we know that ipv4_net is a one-value string array? It's actually complicated to figure out. Here's how to do it:
+**Target is its own beast**. For example, 
+
+### How did we know that ipv4_net is a one-value string array? 
+
+It's actually complicated to figure out. Here's how to do it:
 
 1. Search for examples in any of the OpenC2 specs that use **ipv4_net**.
 2. Can't find any? Look in the language spec for its **type**.
