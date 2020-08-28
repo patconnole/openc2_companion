@@ -193,7 +193,7 @@ Ok, back to using the **actuator field** in an OpenC2 Command.
 # Command: Actuator Field
 ### This field helps a Consumer determine if it should act on a command.
 
-Two fundamental things to understand are that:
+Two fundamental things to understand:
 
 1. **Shotgun Commands**: Producers may **SPAM** Consumers with commands that don't apply to those Consumers, and the Consumers need a way to know which commands are applicable to them.
 1. **Multiple Actuator Profiles**: Consumers may implement more than one Actuator Profile.
