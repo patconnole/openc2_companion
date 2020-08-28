@@ -246,7 +246,7 @@ What does the Consumer do, assuming it processed the command successfully if abl
 |5|slpf + x-troublemaker| &#x274C; Behavior **and** Response are UNDEFINED  |&#x2705; 200 OK |
 
 
-From this, hopefully it's clear how you could use the actuator to your advantage, and also that you should avoid defining Consumers that contain duplicate action-target pairs.
+From this, hopefully it's clear how you could use the actuator field to your advantage, and also that you should avoid defining Consumers that contain duplicate action-target pairs.
 
 # Command ID vs Request ID
 
