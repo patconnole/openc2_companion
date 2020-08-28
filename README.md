@@ -213,7 +213,20 @@ Say we have Consumers implementing the following Actuator Profile(s):
 
 
 ## deny ipv4_net
-We send this consumers the same command, sometimes with an actuator specified, sometimes not:
+We send these consumers the same command:
+
+```json
+"action" : "deny",
+"target" : {"ipv4_net": ["192.168.1.0/24"]}
+```
+
+And sometimes we include the actuator field:
+
+```json
+"actuator" : {"slpf" : {}}
+```
+
+
 
 
 |             |"actuator": "" | "actuator": {"slpf".. |
