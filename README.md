@@ -24,9 +24,9 @@ Fields:                             JSON Example:
 "results"     : -                   "results"     : {"slpf" : {"rule_number": 1234}, "versions" : ["1.0"]}
 ```
 
-**Message Headers** (called Common Message Elements)
+**Message Headers**
 
-Don't forget the Message headers, not part of the payload! What they are and how they're formatted are specified in the Transfer Spec.
+Don't forget the Message headers, not part of the payload! What they are and how they're formatted are specified in the Transfer Spec, called Common Message Elements.
  
 # The Basics
 # Producer + Consumer
