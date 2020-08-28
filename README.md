@@ -127,8 +127,8 @@ Back to the action/target pair:
 
 **Target is its own beast**. For example, how did we know that ipv4_net is a one-value string array? It's actually complicated to figure out. Here's how to do it:
 
-1. Search any of the OpenC2 specs for examples that use **ipv4_net**.
-2. Can't find any? Look for the ***type*** of "ipv4_net" in the Language Spec.
+1. Search for examples in any of the OpenC2 specs that use **ipv4_net**.
+2. Can't find any? Look in the language spec for its **type**.
 3. That type is **IPv4-Net**. Notice the capitalization and dash.
 4. Search the Language Spec for that.
 5. We find 6 references. Look for one that begins with **Type: IPv4-Net (Array /ipv4-net)**
@@ -147,8 +147,7 @@ So now, we are **PRETTY SURE** that a JSON formatted "ipv4_net" value is
 
 Congratulations!
 
-# ~~Command: Actuator Field~~
-# Wait.
+# Command: ~~Actuator Field~~ Wait.
 
 Before we look at the **actuator** field of an OpenC2 Command, we need to know what an actuator is.
 
@@ -156,8 +155,11 @@ Before we look at the **actuator** field of an OpenC2 Command, we need to know w
 
 # Actuator Profile
 
-An Actuator Profile defines the set of commands and responses
+An Actuator Profile defines your commands and what they do. For example, the Stateless Packet Filter Actuator Profile grabs a bunch of actions and targets from the Language spec, pairs them up as individual commands, then declares what those commands should do. 
 
+**Consumers implement Actuator Profile(s)**
+
+So, if we have a Consumer that implements the SLPF Actuator Profile, the Consumer **has** an SLPF Actuator.
 
 
 # Command: Actuator Field
