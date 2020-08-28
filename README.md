@@ -59,6 +59,7 @@ The forgotten children of OpenC2: the headers. They're called [Common Message El
 
 * **content_type** : Is the payload JSON?
 * **msg_type** : Is the payload OpenC2 Command or Response?
+* **request_id** : Easily conflated with "command_id", but can be used to help group commands. Again, look in your Transfer Spec.
 * ... many more that are dependent on the Transfer Spec.
 
 Notice that some *look* like HTTP headers; they become so when used with HTTPS Transfer, eg:
