@@ -152,7 +152,7 @@ Congratulations!
 
 Before we look at the **actuator** field of an OpenC2 Command, we need to know what an actuator is.
 
-**An actuator is an implementation of an Actuator Profile.**
+**An actuator is a Consumer's implementation of an Actuator Profile.**
 
 # Actuator Profile
 
