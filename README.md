@@ -188,6 +188,7 @@ Well, what are the stickers in OpenC2? There are three kinds:
 * **Pre-Shared**: You **configured** the Consumer, so you already know the Actuator Profiles it implements.
 * **Unknown**   : You don't know what the Consumer implements, but you just send it commands because this is an emergency and we don't have time to play games.
 
+Ok, back to using the **actuator field** in an OpenC2 Command.
 
 # Command: Actuator Field
 ### This field helps a Consumer determine if it should act on a command.
