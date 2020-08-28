@@ -150,9 +150,9 @@ It's actually complicated to figure out. Here's how to do it:
 6. In the table there we see 2 values: **IPv4-Addr** and **Integer**
 7. Search the Language Spec for each of those.
 8. Just kidding. Your next move is to read the text *above* that table.
-9. The 4th line there says, **"JSON serialization of an IPv4 address range SHALL use the 'dotted/slash'.."**
+9. The fourth line there says, **"JSON serialization of an IPv4 address range SHALL use the 'dotted/slash'.."**
 10. Ok, now we know to use "192.168..../24" style addresses, but how do we know to put it into a JSON array? A one-value array???
-11. Go back to the first line of section **"3.4.1.9 IPv4 Address Range"**. It reads "An IPv4 address range... **consists of two values**, an IPv4 address and a prefix."
+11. Go back to the *first* line, which reads "An IPv4 address range... **consists of two values**, an IPv4 address and a prefix."
 12. From there, we can guess that we are dealing with an array because of **"..two values.."**, and the fact that we saw the word "Array" in **Type: IPv4-Net (Array /ipv4-net)**
 13. What is **(Array /ipv4-net)**? It looks like some kind of type definition, but I don't recognize the language.
 
