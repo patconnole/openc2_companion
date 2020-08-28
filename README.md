@@ -92,7 +92,7 @@ This is the bread-and-butter of OpenC2, the biggest selling point, and what make
 
 ```json
 "action" : "deny",
-"target" : {"ipv4_net" : ["...."]
+"target" : {"ipv4_net" : ["...."]}
 ```
 The basic syntax is shown below. 
 
