@@ -6,7 +6,8 @@ Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping i
 
 **Command Payload**
 ```
-                                           JSON example:
+Fields:                                    JSON Example:
+                                           
 "action"     : Required                    "action"     : "deny"
 "target"     : Required                    "target"     : {"ipv4_net" : ["192.168.1.0/24"] }
 "actuator"   : Optional                    "actuator"   : {"slpf": {} }
@@ -16,9 +17,11 @@ Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping i
 
 **Response Payload**
 ```
-"status"      : Required
-"status_text" : Optional
-"results"     : Optional
+Fields:                                    JSON Example:
+
+"status"      : Required                   "status"      : 200
+"status_text" : Optional                   "status_text" : "The command succeeded"
+"results"     : Optional                   "results"     : {"slpf" : {"rule_number": 1234}, "versions" : ["1.0"]}
 ```
 
 
