@@ -212,8 +212,6 @@ Say we have Consumers implementing the following Actuator Profile(s):
 |4|slpf + x-acme | - | none |
 |5|slpf + x-troublemaker | - | deny ipv4_net |
 
-
-## deny ipv4_net
 We send these consumers the same command:
 
 ```json
