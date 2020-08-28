@@ -2,7 +2,7 @@
 
 You've read *most of* the OpenC2 specs, and even wrote a quick Consumer to try out. Now what?
 
-Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping into a lot of text, it will help to see the basic format of Commands and Responses:
+Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping in to a lot of text, it will help to see the basic format of Commands and Responses:
 
 **Command Payload**
 ```
