@@ -88,9 +88,15 @@ How did we know how to format it? You would only know by reading the HTTPS Trans
 # Command: Action/Target Pair
 
 In an OpenC2 **Command** Message, the only required payload is an **action** and **target** pair.
-This is the bread-and-butter of OpenC2, the biggest selling point, and what makes it so simple and powerful.
+This is the bread-and-butter of OpenC2, the biggest selling point, and what makes it so simple and powerful. Is there a bad-guy coming in on some IP Address? Block him with 
 
-The basic syntax is shown below. One reason the syntax and format of commands doesn't feel too well-defined in the specs is, again, they're not defined directly, but instead reference other specifications, ie JSON. The specs say "OpenC2 is agnostic of serialization." But also, "You must support JSON". So we are left with a lot of examples in JSON, with an asterisk next to them saying "This section is non-normative". Soooooo, for the sake of ease and to actually implement something, let's assume OpenC2 messages are always JSON.
+```json
+"action" : "deny",
+"target" : {"ipv4_net" : ["...."]
+```
+The basic syntax is shown below. 
+
+One reason the syntax and format of commands doesn't feel too well-defined in the specs is, again, they're not defined directly, but instead reference other specifications, ie JSON. The specs say "OpenC2 is agnostic of serialization." But also, "You must support JSON". So we are left with a lot of examples in JSON, with an asterisk next to them saying "This section is non-normative". Soooooo, for the sake of ease and to actually implement something, let's assume OpenC2 messages are always JSON.
 
 
 Back to the action/target pair:
