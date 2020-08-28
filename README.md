@@ -170,7 +170,7 @@ It's not complicated, but one analogy that helps me is the following:
 
 ![laptop_stickers](/images/laptop_sticker.png)
 
-In this analogy, the laptop is a Consumer, and the stickers advertise the Actuator Profiles it implements.
+In this analogy, the laptop is a Consumer, and the stickers advertise the Actuator Profiles it implements. The Windows sticker advertises an interface you are familiar with that has a "start" command. If there was a Blu-ray Disc sticker, you would expect to find a disc drive with an "open/close" command.
 
 
 # Command: Actuator Field
