@@ -228,13 +228,13 @@ We send these consumers the same command:
 "target" : {"ipv4_net": ["192.168.1.0/24"]}
 ```
 
-And sometimes we include the actuator field:
+And sometimes we include the actuator field specifying SLPF:
 
 ```json
 "actuator" : {"slpf" : {}}
 ```
 
-What does the Consumer do? How does it responsd?
+What does the Consumer do, assuming it processed the command successfully if able? How does it respond?
 
 
 | |             |"actuator": "" | "actuator": {"slpf".. |
