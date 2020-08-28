@@ -65,7 +65,7 @@ The forgotten children of OpenC2: the headers. They're called [Common Message El
 Notice that some *look* like HTTP headers; they become so when used with HTTPS Transfer, eg:
 
 
-Here is a Common Message Element **"content_type"**, cased and dashed appropriately for HTTPS:
+Here are the OpenC2 Common Message Elements **"content_type"** and **"msg_type"**, put into the HTTP Header **"Content-type"**. We also stuck in the version for good measure.
 
 ```
                    This message is an
