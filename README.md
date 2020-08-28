@@ -25,6 +25,7 @@ Fields:                             JSON Example:
 ```
 
 **Message Headers**
+
 Don't forget the Message headers, not part of the payload! What they are and how they're formatted are specified in the Transfer Spec.
  
 # The Basics
