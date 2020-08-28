@@ -191,7 +191,7 @@ Two fundamental things to understand are that:
 
 
 
-# Examples
+## Example
 
 Say we have Consumers implementing the following Actuator Profile(s):
 
@@ -205,7 +205,7 @@ Say we have Consumers implementing the following Actuator Profile(s):
 
 
 ## deny ipv4_net
-...with different values for the Actuator field:
+We send this consumers the same command, sometimes with an actuator specified, sometimes not:
 
 
 |             |"actuator": "" | "actuator": {"slpf".. |
@@ -215,9 +215,6 @@ Say we have Consumers implementing the following Actuator Profile(s):
 |x-acme| :negative_squared_cross_mark: 404; not found   |&#x274C; No work performed, but Response is UNDEFINED |
 |slpf + x-acme| &#x2705; 200 OK                                                          |&#x2705; 200 OK |
 |slpf + x-troublemaker| &#x274C; Behavior **and** Response are UNDEFINED  |&#x2705; 200 OK |
-
-
-
 
 
 
