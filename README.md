@@ -130,7 +130,9 @@ Back to the action/target pair:
 
 For example, 
 
-### How did we know that ipv4_net is a one-value string array? 
+### How did we know that ipv4_net is a one-value string array?
+
+    ["192.168.17.0/24"]
 
 It's actually complicated to figure out. Here's how to do it:
 
