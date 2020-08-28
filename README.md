@@ -166,6 +166,12 @@ An Actuator Profile defines your commands and what they do. For example, the Sta
 
 So, if we have a Consumer that implements the SLPF Actuator Profile, the Consumer **has** an SLPF Actuator.
 
+It's not complicated, but one analogy that helps me is the following:
+
+![laptop_stickers](/images/laptop_sticker.png)
+
+In this analogy, the laptop is a Consumer, and the stickers advertise the Actuator Profiles it implements.
+
 
 # Command: Actuator Field
 ### This field helps a Consumer determine if it should act on a command.
