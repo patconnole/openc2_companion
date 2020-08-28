@@ -58,7 +58,7 @@ Again, notice how we didn't mention anything about Transfer, Serialization, or e
 The forgotten children of OpenC2: the headers. They're called [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in the Language Spec, and their presense and format is completely dependent on what Transfer you are using.
 
 * **content_type** : Is the payload JSON?
-* **msg_type** : Is the payload OpenC2 Command or Response?
+* **msg_type** : Is the payload an OpenC2 Command or Response?
 * **request_id** : Easily conflated with "command_id", but can be used to help group commands. Again, look in your Transfer Spec.
 * ... many more that are dependent on the Transfer Spec.
 
