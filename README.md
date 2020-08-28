@@ -202,15 +202,24 @@ Two fundamental things to understand:
 
 ## Example
 
-Say we have Consumers implementing the following Actuator Profile(s):
+Say we have the following Actuator Profiles:
 
-|Consumer |Actuator Profile(s)| Description | Duplicate Action-Target Pairs (besides query-features) |
+
+| Actuator Profile | Description |
+|-|-|
+|slpf | Stateless Packet Filter |
+|x-troublemaker | Unknown, but supports deny ipv4_net  |
+|x-acme | RoadRunner Hunting |
+
+And Consumers that implement them:
+
+|Consumer |Actuator Profile(s)|  Duplicate Action-Target Pairs (besides query-features) |
 |-|-|-|-|
-|1|slpf | Stateless Packet Filter | -|
-|2|x-troublemaker | Unknown, but supports deny ipv4_net  | - |
-|3|x-acme | RoadRunner Hunting | - |
-|4|slpf + x-acme | - | none |
-|5|slpf + x-troublemaker | - | deny ipv4_net |
+|1|slpf |  -|
+|2|x-troublemaker |  - |
+|3|x-acme |  - |
+|4|slpf + x-acme | none |
+|5|slpf + x-troublemaker | deny ipv4_net |
 
 We send these consumers the same command:
 
