@@ -204,7 +204,7 @@ Two fundamental things to understand are that:
 
 Say we have Consumers implementing the following Actuator Profile(s):
 
-|Consumer |Actuator Profile(s)| Description | Overlapping Action-Target Pairs |
+|Consumer |Actuator Profile(s)| Description | Overlapping Action-Target Pairs (besides query-features) |
 |-|-|-|-|
 |1|slpf | Stateless Packet Filter | -|
 |2|x-troublemaker | Unknown, but supports deny ipv4_net  | - |
