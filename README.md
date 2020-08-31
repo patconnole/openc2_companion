@@ -1,4 +1,4 @@
-# OpenC2 Companion Guide
+# OpenC2 Companion Guide (15 min read)
 You've read *most of* the OpenC2 specs, and even wrote a quick Consumer to try out. Or you've done none of those things. What next?
 
 Here is an informal guide to the knitty-gritty of OpenC2.
