@@ -9,9 +9,9 @@ Here is an informal guide to the knitty-gritty of OpenC2.
 * [Message: Command or Response](#message-command-or-response)
 * [Message: Headers](#message-headers)
 * [Command: Action/Target Pair](#command-actiontarget-pair)
-* [Command: Actuator Field (not yet)](#command-actuator-field-no-not-yet)
+* [Actuator](#command-actuator-field-no-not-yet)
 * [Actuator Profiles](#actuator-profile)
-* [Command: Actuator Field (for real)](#command-actuator-field)
+* [Command: Actuator Field](#command-actuator-field)
 
 
 # Basics
