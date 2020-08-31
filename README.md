@@ -38,7 +38,8 @@ Well, this is the POWER and BARRIER-TO-ENTRY of OpenC2.
 
 In reading the specs, you never saw anything like this:
 
-     The Producer POSTS a JSON "deny" command over TLS to the Gateway on port 99 and expects a 200 OK Payload in an HTTP Response on success.
+     The Producer POSTS a JSON "deny" command over TLS to the Gateway on port 99,
+     and expects a 200 OK Payload in an HTTP Response on success.
      
 Instead, everything in the OpenC2 Language related to Transfer Protocol, Serialization, Commands and even Device is abstractly defined or referenced in the spec. Then their specific implementations are given a growing list of individual specifications. 
 
