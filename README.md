@@ -143,7 +143,7 @@ request_id   : Easily conflated with "command_id", but can be used to help group
 
 Notice that some *look* like HTTP headers; they become so when used with HTTPS Transfer, eg:
 
-Here are the OpenC2 Common Message Elements **"content_type"** and **"msg_type"**, put into the HTTP Header **"Content-type"**. We also stuck in the version for good measure.
+Here are the OpenC2 Common Message Elements **"content_type"** and **"msg_type"**, put into the HTTP Header **"Content-type"**. Note the casing and dash. We also stuck in the version for good measure.
 
 ```
 HTTP Header:
