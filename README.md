@@ -37,6 +37,44 @@ Content-type: application/openc2-cmd+json;version=1.0
 
  
 # The Basics
+# Composing your Implementation
+
+```
+                                                                   +-----------------------------------+
+                                                                   |         Your Implementation       |
+                                                                   +-----------------------------------+
+                                                                   |                                   |
+                                                                   |                                   |
+                                                                   |    +--------------------------+   |
+                                                                   |    |        Producer(s)       |   |
++--------------------+    +----------------------------+           |    |                          |   |
+|Other Specifications|    | OpenC2 Specifications      |           |    +----+---------------------+   |
++--------------------+    +----------------------------+           |         |                         |
+|  +-------------+   |    |                            |           |         |               ^         |
+|  |Serialization|   |    |                            |           |         |               |         |
+|  | * JSON      +-------------------------------------------+     |         v               |         |
+|  | * CBOR      |   |    |                            |     |     |                         |         |
+|  +-------------+   |    | +--------+      +--------+ |     +-------> "action":"deny"       |         |
+|                    |    | |Language|      |Commands| |     |     |   "target":"ipv4_addr"  |         |
+|                    |    | |        +----> | * SLPF +-------+     |                         |         |
+|                    |    | |        |      | * ...  | |           |         +               +         |
+|                    |    | |        |      +--------+ |           |         |                         |
+|                    |    | |        |                 |           |         |         "status": 200   |
+|                    |    | |        |      +--------+ |           |         |                         |
+|                    |    | |        |      |Transfer| |           |         |               ^         |
+|                    |    | |        +----> | * HTTP +-------------------->  |               |         |
+|                    |    | |        |      | * MQTT | |           |         |               |         |
+|                    |    | +--------+      +--------+ |           |         v               +         |
++--------------------+    +----------------------------+           |                                   |
+                                                                   |    +--------------------------+   |
+                                                                   |    |        Consumer(s)       |   |
+                                                                   |    |                          |   |
+                                                                   |    +--------------------------+   |
+                                                                   |                                   |
+                                                                   +-----------------------------------+
+
+```
+
 # Producer + Consumer
 
 * **Producers** send Commands to Consumers. If you want to defend your network, your network nodes will be OpenC2 Consumers, awaiting commands from your Producer(s). The Producer could be a command-line script that you run manually, one of your Consumers, or a billion dollar orchestration system. It doesn't matter.
