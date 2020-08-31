@@ -4,7 +4,7 @@ You've read *most of* the OpenC2 specs, and even wrote a quick Consumer to try o
 Here is an informal guide to the knitty-gritty of OpenC2.
 
 * [Basics](#basics)
-* [OpenC2 Structure](#composing-your-implementation)
+* [OpenC2 Structure](#openc2-structure)
 * [Producers and Consumers](#producers-and-consumers)
 * [Message: Command or Response](#message-command-or-response)
 * [Message: Headers](#message-headers)
@@ -44,7 +44,7 @@ Content-type: application/openc2-cmd+json;version=1.0
 ```
 
  
-# Composing your Implementation
+# OpenC2 Structure
 
 In the above examples, notice how they're all qualified with **..in JSON** or **..in HTTP**? Why is that? Why not just say "Example Command" or "Message Header" without the qualification?
 
@@ -62,6 +62,7 @@ This way a system of Producers and Consumers could be OpenC2 compliant no matter
 
 BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF WHAT OPENC2 IS. You will never find one document that tells you everything you need. Instead, you need to know your Transfer, Serialization, Commands, and what they're all running on ahead of time, and figure out how they work together yourself. If you are familiar with abstract interfaces in programming, you might feel right at home when reading the OpenC2 Language spec.
 
+**Composing your Implementation**
 
 ```
   OpenC2 Specifications          Other Specifications                       Your Implementation
