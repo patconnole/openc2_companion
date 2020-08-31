@@ -8,25 +8,32 @@ Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping i
 ```
 Fields:                             JSON Example:
                                            
-"action"     : Required             "action"     : "deny"
-"target"     : Required             "target"     : {"ipv4_net" : ["192.168.1.0/24"] }
-"actuator"   : -                    "actuator"   : {"slpf": {} }
-"args"       : -                    "args"       : {"response_requested" : "ack", "start_time" : 1534775460000 }
-"command_id" : -                    "command_id" : "12345"
+action     : Required             "action"     : "deny"
+target     : Required             "target"     : {"ipv4_net" : ["192.168.1.0/24"] }
+actuator   : -                    "actuator"   : {"slpf": {} }
+args       : -                    "args"       : {"response_requested" : "ack", "start_time" : 1534775460000 }
+command_id : -                    "command_id" : "12345"
 ```
 
 **Response Payload**
 ```
 Fields:                             JSON Example:
 
-"status"      : Required            "status"      : 200
-"status_text" : -                   "status_text" : "The command succeeded"
-"results"     : -                   "results"     : {"slpf" : {"rule_number": 1234}, "versions" : ["1.0"]}
+status      : Required            "status"      : 200
+status_text : -                   "status_text" : "The command succeeded"
+results     : -                   "results"     : {"slpf" : {"rule_number": 1234}, "versions" : ["1.0"]}
 ```
 
 **Message Headers**
+```
+Fields:                                HTTPS Example:
 
-Don't forget the Message headers, not part of the payload! What they are and how they're formatted are specified in the Transfer Spec, called Common Message Elements.
+content_type : Transport dependent     Content-type: application/openc2-cmd+json;version=1.0
+request_id   : Transport dependent 
+msg_type     : Transport dependent
+...
+```
+
  
 # The Basics
 # Producer + Consumer
@@ -57,7 +64,7 @@ Again, notice how we didn't mention anything about Transfer, Serialization, or e
 
 # Message: Headers
 
-The forgotten children of OpenC2: the headers. They're called [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in the Language Spec, and their presense and format is completely dependent on what Transfer you are using.
+The forgotten children of OpenC2: The Headers. They're called [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in the Language Spec, but their details are in the Transfer specs, becuase 'headers' is very dependent on transport protocol. They tell you if the payload is a Command or Response, in JSON or something else, etc.
 
 * **content_type** : Is the payload JSON?
 * **msg_type** : Is the payload an OpenC2 Command or Response?
