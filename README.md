@@ -1,7 +1,22 @@
 # OpenC2 Companion Guide
-You've read *most of* the OpenC2 specs, and even wrote a quick Consumer to try out.
+You've read *most of* the OpenC2 specs, and even wrote a quick Consumer to try out. Or you've done none of those things. What next?
 
-Here is an informal guide to the knitty-gritty of OpenC2. Before jumping in to a lot of text, it will help to see the basic format of Commands and Responses:
+Here is an informal guide to the knitty-gritty of OpenC2.
+
+* [Basics](#basics)
+* [OpenC2 Structure](#composing-your-implementation)
+* [Producers and Consumers](#producers-and-consumers)
+* [Message: Command or Response](#message-command-or-response)
+* [Message: Headers](#message-headers)
+* [Command: Action/Target Pair](#command-actiontarget-pair)
+* [Command: Actuator Field (not yet)](#command-actuator-field-no-not-yet)
+* [Actuator Profiles](#actuator-profile)
+* [Command: Actuator Field (for real)](#command-actuator-field)
+
+
+# Basics
+
+Before jumping in to a lot of text, it will help to see the basic format of Commands and Responses:
 
 **Command Payload in JSON**
 ```
@@ -77,7 +92,7 @@ BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF
 
 ```
 
-# Producer + Consumer
+# Producers and Consumers
 
 * **Producers** send Commands to Consumers. If you want to defend your network, your network nodes will be OpenC2 Consumers, awaiting commands from your Producer(s). The Producer could be a command-line script that you run manually, one of your Consumers, or a billion dollar orchestration system. It doesn't matter.
 * **Consumers** act when given a Command, and reply to Producers with Responses.
