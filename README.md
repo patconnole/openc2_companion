@@ -78,16 +78,16 @@ results     : -                   "results"     : {"slpf" : {"rule_number": 1234
 
 # Message: Headers
 
-The forgotten children of OpenC2: The Headers. They're called [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in the Language Spec, but their details are in the Transfer specs, becuase 'headers' is very dependent on transport protocol. They tell you if the payload is a Command or Response, in JSON or something else, etc.
+The forgotten children of OpenC2: The Headers. They're called [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in the Language Spec, but their implementation details are in the Transfer specs, becuase 'headers' is very dependent on transport protocol. They tell you if the payload is a Command or Response, in JSON or something else, etc.
+
 **Message Headers**
 ```
-Fields:                                
-
 content_type : Is the payload JSON?
 msg_type     : Is the payload an OpenC2 Command or Response?
 request_id   : Easily conflated with "command_id", but can be used to help group commands. Again, look in your Transfer Spec.
 ...          : Many more that are dependent on the Transfer Spec.
 ```
+
 Notice that some *look* like HTTP headers; they become so when used with HTTPS Transfer, eg:
 
 Here are the OpenC2 Common Message Elements **"content_type"** and **"msg_type"**, put into the HTTP Header **"Content-type"**. We also stuck in the version for good measure.
