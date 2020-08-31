@@ -51,7 +51,7 @@ In the above examples, notice how they're all qualified with **..in JSON** or **
 Well, this is the POWER and BARRIER-TO-ENTRY of OpenC2.
 
 
-In reading the specs, you never saw anything like this:
+In reading the specs, you won't find anything like this:
 
      The Producer POSTS a JSON "deny" command over TLS to the Gateway on port 99,
      and expects a 200 OK Payload in an HTTP Response on success.
