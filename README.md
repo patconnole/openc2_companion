@@ -40,31 +40,31 @@ Content-type: application/openc2-cmd+json;version=1.0
 # Composing your Implementation
 
 ```
-Other Specifications                OpenC2 Specifications                              Your Implementation
-         +                                   +
-         |                                   |
-         v                                   v                                       +---------------------+
-                                                                                     |      Producer(s)    |
-                                                                                     +--+---------------+--+
-                                                                                        |               ^
-  +-------------+                                                                       |               |
-  |Serialization|                                                                       |               |
-  | * JSON      +---------------------------------------------------+                   v               |
-  | * CBOR      |                                                   |                                   |
-  +-------------+                +--------+      +--------+         +----------->  "action":"deny"      |
-                                 |Language|      |Commands|         |              "target":"ipv4_addr" |
-                                 |        +----> | * SLPF +---------+                                   |
-                                 |        |      | * ...  |                             +               +
-                                 |        |      +--------+                             |
-                                 |        |                                             |       "status": 200
-                                 |        |      +--------+                             |
-                                 |        |      |Transfer|                             |               ^
-                                 |        +----> | * HTTP +-------------------------->  |               |
-                                 |        |      | * MQTT |                             |               |
-                                 +--------+      +--------+                             v               |
-                                                                                     +-- ---------------+--+
-                                                                                     |      Consumer(s)    |
-                                                                                     +---------------------+
+  OpenC2 Specifications          Other Specifications                       Your Implementation
+
+    |               |                     |
+    v               v                     v                               +---------------------+
+                                                                          |      Producer(s)    |
+                                                                          +--+---------------+--+
++--------+      +--------+                                                   |               ^
+|Language|      |Transfer|                                                   |               |
+|        +----> | * HTTP +-------------------------------------------------> |               |
+|        |      | * MQTT |                                                   |               |
+|        |      +--------+                                                   |               +
+|        |                                                                   |
+|        |      +--------+                                                   |           "status": 200
+|        |      |Commands|                                                   |
+|        +----> | * SLPF +-------------------------------+                   v               ^
+|        |      | * ...  |                               |                                   |
+|        |      +--------+         +-------------+       +----------> "action":"deny"        |
+|        |                         |Serialization|       |            "target":"ipv4_addr"   |
+|        +-----------------------> | * JSON      +-------+                                   |
+|        |                         | * CBOR      |                           +               |
++--------+                         +-------------+                           |               |
+                                                                             v               |
+                                                                          +-- ---------------+--+
+                                                                          |      Consumer(s)    |
+                                                                          +---------------------+
 
 ```
 
