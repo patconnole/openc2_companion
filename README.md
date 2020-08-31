@@ -302,7 +302,8 @@ Ok, back to using the **actuator field** in an OpenC2 Command.
 ### This field helps a Consumer determine if it should act on a command.
 
 Remember, the only required fields in an OpenC2 Command are the **action** and **target**.
-* `"actuator" : {}` --> Anyone with this action/target pair, please act.
+
+`"actuator" : {}` --> Anyone with this action/target pair, please act.
 
 Two fundamental things to understand:
 
