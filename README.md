@@ -310,7 +310,7 @@ Two fundamental things to understand:
 1. **Multiple Actuator Profiles**: Consumers may implement more than one Actuator Profile.
     * `"actuator" : {"slpf": {} }` --> *Only Consumers with SLPF should act on this command*
 1. **Filtering out Shotgun Commands**: Producers may **SPAM** Consumers with commands that don't apply to those Consumers, and the Consumers need a way to know which commands are applicable to them. 
-    * `"actuator" : {"slpf": {"named_group": "perimeter"}}` --> *Only Consumers with SLPF and part of the perimeter group should act on this command*
+    * `"actuator" : {"slpf": {"named_group": "perimeter"}}` --> *Only Consumers with SLPF and part of the SLPF perimeter group should act on this command*
 
 
 
