@@ -356,41 +356,16 @@ From this, hopefully it's clear how you could use the actuator field to your adv
 
 # Command ID vs Request ID
 
-# Command: Required
+insert content
 
-What commands can your Producer send to your Consumer? There is always one command that is required to implemented on your Consumers:
+
+# Query Features
+
+What commands can your Producer send to your Consumer? There is always one command that is required to be implemented on your Consumers:
 
      query features
      
-This is probably the first command your Producer will send out. The Response will tell you everything you need to know about the Consumer that received the Command, including what other commands it implements. Where are those commands defined though?
-
-
-# Actuator Profiles
-
-This is where the meaning
-
-
-This is defined in a specification called an Actuator Profile. This spec defines 
+This is probably the first command your Producer will send out. The Response will tell you everything you need to know about the Consumer that received the Command, including what other commands it implements.
 
 
 
-Ok, we've covered the minimum payload. Anything else we need to be up to spec?
-
-Yes! The forgotten children of OpenC2: the headers. In the Language Spec, they're known as Common Message Elements, and their presense and format is completely dependent on what Transport you are using. When sending the above examples over HTTP, you need to include the following header:
-    
-    Content-type: application/openc2-cmd+json;version=1.0
-    
-That header combines TWO Common Message Elements: content_type and msg_type. You would only know this by reading the HTTPS Transfer Spec.
-
-
-* **Transfer-Dependent Headers** : Known as [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in Language Spec. The presence and format of these are completely dependent on the Transfer Spec. For example, the HTTPS combines content_type and msg_type into one field.
-  * **content_type** : Is this JSON?
-  * **msg_type** : Is this an OpenC2 Command or Response?
-  * ... many more that are dependent on the Transfer Spec.
- 
-* **Content / Payload**
-  * **"action"** : string; single word
-  * **"target"** : one-key-dictionary, with its value dependent on the target. eg "target" : {"ipv4_net": ...}
-  * **"args"** : nested-dictionary; multiple-key-dictionary eg "args" : {"response_requested" : ..., "duration" : ...}
-  * **"actuator"** : nested-dictionary; one-key-dictionary, with its value dependent on the target eg "actuator" : {"slpf": ...} [Actuator Field Disambiguation](/disambiguation/actuator_field.md)
-  * **"command_id"** : string
