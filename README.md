@@ -1,18 +1,14 @@
 # OpenC2 Companion Guide
+You've read *most of* the OpenC2 specs, and even wrote a quick Consumer to try out.
 
-You've read *most of* the OpenC2 specs, and even wrote a quick Consumer to try out. Now what?
-
-Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping in to a lot of text, it will help to see the basic format of Commands and Responses:
+Here is an informal guide to the knitty-gritty of OpenC2. Before jumping in to a lot of text, it will help to see the basic format of Commands and Responses:
 
 **Command Payload in JSON**
 ```
-(required)
-
     "action"     : "deny"
     "target"     : {"ipv4_net" : ["192.168.1.0/24"] }
     
 (optional)
-
     "actuator"   : {"slpf": {} }
     "args"       : {"response_requested" : "ack", "start_time" : 1534775460000 }
     "command_id" : "12345"
@@ -20,12 +16,9 @@ Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping i
 
 **Response Payload in JSON**
 ```
-(required)
-
     "status"      : 200
     
 (optional)
-
     "status_text" : "The command succeeded"
     "results"     : {"slpf" : {"rule_number": 1234}, "versions" : ["1.0"]}
 ```
@@ -36,8 +29,23 @@ Content-type: application/openc2-cmd+json;version=1.0
 ```
 
  
-# The Basics
 # Composing your Implementation
+
+In the above examples, notice how they're all qualified with **..in JSON** or **..in HTTP**? Why is that? Why not just say "Example Command" or "Message Header" without the qualification?
+
+Well, this is the POWER and BARRIER-TO-ENTRY of OpenC2.
+
+
+In reading the specs, you never saw anything like this:
+
+     The Producer POSTS a JSON "deny" command over TLS to the Gateway on port 99 and expects a 200 OK Payload in an HTTP Response on success.
+     
+Instead, everything in the OpenC2 Language related to Transfer Protocol, Serialization, Commands and even Device is abstractly defined or referenced in the spec. Then their specific implementations are given a growing list of individual specifications. 
+
+This way a system of Producers and Consumers could be OpenC2 compliant no matter if they're using HTTPS, MQTT, JSON, CBOR, running on a VM, Mac-Mini, or Physical Router, etc. The specific Transfer, Serialization, and set of Commands are composed together with their own specs, and OpenC2 doesn't prescribe what they run on.
+
+BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF WHAT OPENC2 IS. You will never find one document that tells you everything you need. Instead, you need to know your Transfer, Serialization, Commands, and what they're all running on ahead of time, and figure out how they work together yourself. If you are familiar with abstract interfaces in programming, you might feel right at home when reading the OpenC2 Language spec.
+
 
 ```
   OpenC2 Specifications          Other Specifications                       Your Implementation
@@ -73,15 +81,7 @@ Content-type: application/openc2-cmd+json;version=1.0
 * **Producers** send Commands to Consumers. If you want to defend your network, your network nodes will be OpenC2 Consumers, awaiting commands from your Producer(s). The Producer could be a command-line script that you run manually, one of your Consumers, or a billion dollar orchestration system. It doesn't matter.
 * **Consumers** act when given a Command, and reply to Producers with Responses.
 
-Notice how nobody has said:
 
-     The Producer POSTS a JSON command over TLS to the Gateway on port 99 and expects a 200 OK on success.
-     
-Instead, everything related to Transfer Protocol, Serialization, Commands and even Device is abstractly defined or referenced in the OpenC2 Language. Then their specific implementations are given a growing list of individual specifications. 
-
-This way a system of Producers and Consumers could be OpenC2 compliant no matter if they're using HTTPS, MQTT, JSON, CBOR, running on a VM, Mac-Mini, or Physical Router, etc. The specific Transfer, Serialization, and set of Commands are composed together with their own specs, and OpenC2 doesn't prescribe what they run on.
-
-BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF WHAT OPENC2 IS. You will never find one document that tells you everything you need. Instead, you need to know your Transfer, Serialization, Commands, and what they're all running on ahead of time, and figure out how they work together yourself. If you are familiar with abstract interfaces in programming, you might feel right at home when reading the OpenC2 Language spec.
 
 
 
