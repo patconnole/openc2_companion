@@ -6,12 +6,12 @@ Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping i
 
 **Command Payload in JSON**
 ```
-REQUIRED FIELDS:
+(required)
 
     "action"     : "deny"
     "target"     : {"ipv4_net" : ["192.168.1.0/24"] }
     
-OPTIONAL FIELDS:
+(optional)
 
     "actuator"   : {"slpf": {} }
     "args"       : {"response_requested" : "ack", "start_time" : 1534775460000 }
@@ -20,11 +20,11 @@ OPTIONAL FIELDS:
 
 **Response Payload in JSON**
 ```
-REQUIRED FIELD:
+(required)
 
     "status"      : 200
     
-OPTIONAL FIELDS:
+(optional)
 
     "status_text" : "The command succeeded"
     "results"     : {"slpf" : {"rule_number": 1234}, "versions" : ["1.0"]}
