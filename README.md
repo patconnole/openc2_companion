@@ -56,11 +56,11 @@ In reading the specs, you won't find anything like this:
      The Producer POSTS a JSON "deny" command over TLS to the Gateway on port 99,
      and expects a 200 OK Payload in an HTTP Response on success.
      
-Instead, everything in the OpenC2 Language related to Transfer Protocol, Serialization, Commands and even Device is abstractly defined or referenced in the spec. Then their specific implementations are given a growing list of individual specifications. 
+Instead, everything in the OpenC2 Language related to Transfer Protocol, Serialization, Commands and even Device is abstractly defined or referenced in the spec. Then their specific implementations are given in a growing list of individual specifications. 
 
 This way a system of Producers and Consumers could be OpenC2 compliant no matter if they're using HTTPS, MQTT, JSON, CBOR, running on a VM, Mac-Mini, or Physical Router, etc. The specific Transfer, Serialization, and set of Commands are composed together with their own specs, and OpenC2 doesn't prescribe what they run on.
 
-BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF WHAT OPENC2 IS. You will never find one document that tells you everything you need. Instead, you need to know your Transfer, Serialization, Commands, and what they're all running on ahead of time, and figure out how they work together yourself. If you are familiar with abstract interfaces in programming, you might feel right at home when reading the OpenC2 Language spec.
+BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF WHAT OPENC2 IS. You will never find one document that tells you everything you need. Instead, you need to know your Transfer, Serialization, Commands, ahead of time, and compose it all yourself. If you are familiar with abstract interfaces in software development, you might feel right at home reading the OpenC2 Language spec.
 
 **Composing your Implementation**
 
