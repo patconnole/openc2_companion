@@ -143,9 +143,9 @@ request_id   : Easily conflated with "command_id", but can be used to help group
 ...          : Many more that are dependent on the Transfer Spec.
 ```
 
-Notice that some *look* like HTTP headers; they become so when used with HTTPS Transfer, eg:
+Notice that some *look* very similar to HTTP headers.
 
-Here are OpenC2 Common Message Elements **"content_type"** and **"msg_type"**, put into the HTTP Header **"Content-type"**. Note the casing and dash. We also stuck in the version for good measure.
+For example, here's how the DATA of **"content_type"** and **"msg_type"** is put into the HTTP Header **"Content-type"**. Note the casing and dash. We also stuck in the version for good measure.
 
 ```
 HTTP Header:
