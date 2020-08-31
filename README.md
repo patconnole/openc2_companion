@@ -18,7 +18,7 @@ Here is an informal guide to the knitty-gritty of OpenC2.
 
 Before jumping in to a lot of text, it will help to see the basic format of Commands and Responses:
 
-**Command Payload in JSON**
+**Example Command in JSON**
 ```
     "action"     : "deny"
     "target"     : {"ipv4_net" : ["192.168.1.0/24"] }
@@ -29,7 +29,7 @@ Before jumping in to a lot of text, it will help to see the basic format of Comm
     "command_id" : "12345"
 ```
 
-**Response Payload in JSON**
+**Example Response in JSON**
 ```
     "status"      : 200
     
@@ -38,7 +38,7 @@ Before jumping in to a lot of text, it will help to see the basic format of Comm
     "results"     : {"slpf" : {"rule_number": 1234}, "versions" : ["1.0"]}
 ```
 
-**Message Headers in HTTP**
+**Example Message Headers in HTTP**
 ```
 Content-type: application/openc2-cmd+json;version=1.0
 ```
