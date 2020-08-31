@@ -201,15 +201,15 @@ Back to the action/target pair:
 
 **The "action" field is obviously simple**; it's just one word, and can only be a word from the actions listed in the Language Spec.
 
-"target" is its own beast.
+**"target" is its own beast.** For example, 
 
-For example, 
-
-### How did we know that ipv4_net is a one-value string array?
+How did we know that ipv4_net is a one-value string array?
 
     ["192.168.17.0/24"]
 
-It's actually complicated to figure out. Here's how to do it:
+It's actually complicated to figure out, and this is one of the barriers-to-entry we mentioned earlier. Instead of prescribing exactly how to format something in JSON, we have to deduce the format for any serialization.
+
+Here's a horrible example (read at your own peril).
 
 1. Search for examples in any of the OpenC2 specs that use **ipv4_net**.
 2. Can't find any? Look in the language spec for its **type**.
