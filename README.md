@@ -196,27 +196,29 @@ So now, we are **PRETTY SURE** that a JSON formatted "ipv4_net" value is
 
 Congratulations!
 
-# Command: ~~Actuator Field~~ Wait.
+# Command: Actuator Field. No, not yet.
 
-Before we look at the **actuator** field of an OpenC2 Command, we need to know what an actuator is.
+Before we look at the **actuator field** of an OpenC2 Command, we need to know what an actuator is.
 
 **An actuator is a Consumer's implementation of an Actuator Profile.**
 
 # Actuator Profile
 
-An Actuator Profile defines your commands and what they do. For example, the Stateless Packet Filter Actuator Profile grabs a bunch of actions and targets from the Language spec, pairs them up as individual commands, then declares what those commands should do. On top of that, it gives itself a standard name: "slpf" (known as a namespace identifier "nsid").
+An **Actuator Profile** defines your commands and what they do. For example, the **Stateless Packet Filter Actuator Profile** grabs a bunch of actions and targets from the Language spec, pairs them up as individual commands, then declares what those commands should do. On top of that, it gives itself a standard name: **"slpf"** (known as a namespace identifier "nsid").
 
 **Consumers implement Actuator Profile(s)**
 
 So, if we have a Consumer that implements the SLPF Actuator Profile, the Consumer **has** an SLPF Actuator.
 
-It's not complicated, but one analogy that helps me is the following:
+It's not complicated, but one analogy that helps is the following:
 
 ![laptop_stickers](/images/laptop_sticker.png)
 
-In this analogy, the laptop is a Consumer, and the stickers advertise the Actuator Profiles it implements. The Windows sticker advertises an interface you are familiar with that has a "start" command. If there was a Blu-ray Disc sticker, you would expect to find a disc drive with an "open/close" command.
+In this analogy, the laptop is a Consumer, and the stickers advertise the Actuator Profiles it implements. 
+* The Windows sticker advertises an interface you are familiar with that has a "start" command. 
+* If there was a Blu-ray Disc sticker, you would expect to find a disc drive with an "open/close" command.
 
-Well, what are the stickers in OpenC2? There are three kinds:
+Well, where are the stickers in OpenC2? There are three kinds:
 
 * **Discovered**: You send the Consumer a command called **'query-features'**, and it tells you the Actuator Profiles it implements.
 * **Pre-Shared**: You **configured** the Consumer, so you already know the Actuator Profiles it implements.
