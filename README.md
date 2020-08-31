@@ -59,24 +59,46 @@ An OpenC2 Message is a Command OR Response.
 * **Commands** are sent by Producers to Consumers. There can only be ONE Command in a Message.
 * **Responses** are sent by Consumers to Producers. There can only be ONE Response in a Message
 
-Again, notice how we didn't mention anything about Transfer, Serialization, or even what the Commands are yet? We also haven't said how many Responses are generated for any Commands.
+Again, notice how we didn't mention anything about Transfer, Serialization, or even what the Commands are yet? We also haven't said how many Responses are generated for any Commands, or when/how they're sent.
 
+**Command Payload**
+```
+Fields:                             JSON Example:
+                                           
+action     : Required             "action"     : "deny"
+target     : Required             "target"     : {"ipv4_net" : ["192.168.1.0/24"] }
+actuator   : -                    "actuator"   : {"slpf": {} }
+args       : -                    "args"       : {"response_requested" : "ack", "start_time" : 1534775460000 }
+command_id : -                    "command_id" : "12345"
+```
+
+**Response Payload**
+```
+Fields:                             JSON Example:
+
+status      : Required            "status"      : 200
+status_text : -                   "status_text" : "The command succeeded"
+results     : -                   "results"     : {"slpf" : {"rule_number": 1234}, "versions" : ["1.0"]}
+```
 
 # Message: Headers
 
 The forgotten children of OpenC2: The Headers. They're called [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in the Language Spec, but their details are in the Transfer specs, becuase 'headers' is very dependent on transport protocol. They tell you if the payload is a Command or Response, in JSON or something else, etc.
+**Message Headers**
+```
+Fields:                                
 
-* **content_type** : Is the payload JSON?
-* **msg_type** : Is the payload an OpenC2 Command or Response?
-* **request_id** : Easily conflated with "command_id", but can be used to help group commands. Again, look in your Transfer Spec.
-* ... many more that are dependent on the Transfer Spec.
-
+content_type : Is the payload JSON?
+msg_type     : Is the payload an OpenC2 Command or Response?
+request_id   : Easily conflated with "command_id", but can be used to help group commands. Again, look in your Transfer Spec.
+...          : Many more that are dependent on the Transfer Spec.
+```
 Notice that some *look* like HTTP headers; they become so when used with HTTPS Transfer, eg:
-
 
 Here are the OpenC2 Common Message Elements **"content_type"** and **"msg_type"**, put into the HTTP Header **"Content-type"**. We also stuck in the version for good measure.
 
 ```
+HTTP Header:
                    This message is an
                    OpenC2 Command!
                           |               Using this
