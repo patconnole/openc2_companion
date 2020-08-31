@@ -39,7 +39,7 @@ Content-type: application/openc2-cmd+json;version=1.0
 # The Basics
 # Producer + Consumer
 
-* **Producers** send Commands to Consumers. If you want to defend your network, your network nodes will be OpenC2 Consumers, awaiting commands from your Producer(s). The Producer could be a command-line script that you run manually, or a billion dollar orchestration system. We don't care.
+* **Producers** send Commands to Consumers. If you want to defend your network, your network nodes will be OpenC2 Consumers, awaiting commands from your Producer(s). The Producer could be a command-line script that you run manually, one of your Consumers, or a billion dollar orchestration system. It doesn't matter.
 * **Consumers** act when given a Command, and reply to Producers with Responses.
 
 Notice how nobody has said:
