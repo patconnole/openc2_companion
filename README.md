@@ -4,10 +4,8 @@ You've read *most of* the OpenC2 specs, and even wrote a quick Consumer to try o
 
 Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping in to a lot of text, it will help to see the basic format of Commands and Responses:
 
-**Command Payload**
+**Command Payload in JSON**
 ```
-JSON Example:
-
 REQUIRED FIELDS:                                       
     "action"     : "deny"
     "target"     : {"ipv4_net" : ["192.168.1.0/24"] }
@@ -17,10 +15,8 @@ OPTIONAL FIELDS:
     "command_id" : "12345"
 ```
 
-**Response Payload**
+**Response Payload in JSON**
 ```
-JSON Example:
-
 REQUIRED FIELD:
     "status"      : 200
 OPTIONAL FIELDS:
@@ -28,10 +24,8 @@ OPTIONAL FIELDS:
     "results"     : {"slpf" : {"rule_number": 1234}, "versions" : ["1.0"]}
 ```
 
-**Message Headers**
+**Message Headers in HTTP**
 ```
-HTTP Example:
-
 Content-type: application/openc2-cmd+json;version=1.0
 ```
 
