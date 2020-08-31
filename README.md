@@ -84,10 +84,6 @@ BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF
 
 
 
-
-
-
-
 # Message: Command or Response
 
 An OpenC2 Message is a Command OR Response.
@@ -119,7 +115,7 @@ results     : -                   "results"     : {"slpf" : {"rule_number": 1234
 
 # Message: Headers
 
-The forgotten children of OpenC2: The Headers. They're called [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in the Language Spec, but their implementation details are in the Transfer specs, becuase 'headers' is very dependent on transport protocol. They tell you if the payload is a Command or Response, in JSON or something else, etc.
+The forgotten children of OpenC2: The Headers. They're called [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in the Language Spec, but their implementation details are in the Transfer specs, because 'headers' is very dependent on transport protocol. They tell you if the payload is a Command or Response, in JSON or something else, etc.
 
 **Message Headers**
 ```
