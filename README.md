@@ -53,6 +53,9 @@ This way a system of Producers and Consumers could be OpenC2 compliant no matter
 BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF WHAT OPENC2 IS. You will never find one document that tells you everything you need. Instead, you need to know your Transfer, Serialization, Commands, and what they're all running on ahead of time, and figure out how they work together yourself. If you are familiar with abstract interfaces in programming, you might feel right at home when reading the OpenC2 Language spec.
 
 
+
+
+
 # Message: Command or Response
 
 An OpenC2 Message is a Command OR Response.
