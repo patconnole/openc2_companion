@@ -9,7 +9,7 @@ Here is an informal guide to the knitty-gritty of OpenC2.
 * [Message: Command or Response](#message-command-or-response)
 * [Message: Headers](#message-headers)
 * [Command: Action/Target Pair](#command-actiontarget-pair)
-* [Actuator](#command-actuator-field-no-not-yet)
+* [Actuator](#actuator)
 * [Actuator Profiles](#actuator-profile)
 * [Command: Actuator Field](#command-actuator-field)
 
@@ -243,7 +243,7 @@ So now, we are **PRETTY SURE** that a JSON formatted "ipv4_net" value is
 
 Congratulations!
 
-# Command: Actuator Field. No, not yet.
+# Actuator
 
 Before we look at the **actuator field** of an OpenC2 Command, we need to know what an actuator is.
 
