@@ -60,7 +60,7 @@ Instead, everything in the OpenC2 Language related to Transfer Protocol, Seriali
 
 This way a system of Producers and Consumers could be OpenC2 compliant no matter if they're using HTTPS, MQTT, JSON, CBOR, running on a VM, Mac-Mini, or Physical Router, etc. The specific Transfer, Serialization, and set of Commands are composed together with their own specs, and OpenC2 doesn't prescribe what they run on.
 
-BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF WHAT OPENC2 IS. You will never find one document that tells you everything you need. Instead, you need to know your Transfer, Serialization, Commands, ahead of time, and compose it all yourself. If you are familiar with abstract interfaces in software development, you might feel right at home reading the OpenC2 Language spec.
+BECAUSE OF THIS, YOU WILL OFTEN FEEL LIKE YOU'RE MISSING CONCRETE DEFINITIONS OF WHAT OPENC2 IS. You will never find one document that tells you everything you need. Instead, you need to know your Transfer, Serialization, and Commands ahead of time, then compose it all yourself. If you are familiar with abstract interfaces in software development, you might feel right at home reading the OpenC2 Language spec.
 
 **Composing your Implementation**
 
