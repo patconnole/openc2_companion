@@ -122,7 +122,7 @@ This is the bread-and-butter of OpenC2, the biggest selling point, and what make
 ```
 The basic syntax is shown below. 
 
-One reason the syntax and format of commands doesn't feel too well-defined in the specs is, again, they're not defined directly, but instead reference other specifications, ie JSON. The specs say "OpenC2 is agnostic of serialization." But also, "You must support JSON". So we are left with a lot of examples in JSON, with an asterisk next to them saying "This section is non-normative". Soooooo, for the sake of ease and to actually implement something, let's assume OpenC2 messages are always JSON.
+One reason the syntax and format of commands doesn't feel too well-defined in the specs is, again, they're not defined directly, but instead reference other specifications, ie JSON. The specs say "OpenC2 is agnostic of serialization." But also, "You must support JSON". So we are shown a lot of examples in JSON, with an asterisk next to them saying "This section is non-normative". But, for the sake of ease and to actually implement something, let's assume OpenC2 messages are always JSON.
 
 
 Back to the action/target pair:
@@ -145,6 +145,8 @@ Back to the action/target pair:
      always a one-key          
      dictionary, eg 
      {"ipv4_net": ...}
+     
+     
                               We could also have another dictionary, 
                               as with target ipv4_connection:
                                |
