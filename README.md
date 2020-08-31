@@ -285,6 +285,8 @@ In this analogy, the laptop is a Consumer, and the stickers advertise the Actuat
 * The Windows sticker advertises an interface you are familiar with that has a "start" command. 
 * If there was a Blu-ray Disc sticker, you would expect to find a disc drive with an "open/close" command.
 
+In the OpenC2 world, if we saw an "slpf" sticker, we would expect support for the "deny ipv4_net" command.
+
 Well, where are the stickers in OpenC2? There are three kinds:
 
 * **Discovered**: You send the Consumer a command called **'query-features'**, and it tells you the Actuator Profiles it implements. That's the only command that all Consumers must implement, and the only one that isn't specific to Actuators.
