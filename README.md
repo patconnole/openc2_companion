@@ -6,32 +6,33 @@ Well, here is an informal guide to the knitty-gritty of OpenC2. Before jumping i
 
 **Command Payload**
 ```
-Fields:                             JSON Example:
-                                           
-action     : Required             "action"     : "deny"
-target     : Required             "target"     : {"ipv4_net" : ["192.168.1.0/24"] }
-actuator   : -                    "actuator"   : {"slpf": {} }
-args       : -                    "args"       : {"response_requested" : "ack", "start_time" : 1534775460000 }
-command_id : -                    "command_id" : "12345"
+JSON Example:
+
+REQUIRED FIELDS:                                       
+    "action"     : "deny"
+    "target"     : {"ipv4_net" : ["192.168.1.0/24"] }
+OPTIONAL FIELDS:
+    "actuator"   : {"slpf": {} }
+    "args"       : {"response_requested" : "ack", "start_time" : 1534775460000 }
+    "command_id" : "12345"
 ```
 
 **Response Payload**
 ```
-Fields:                             JSON Example:
+JSON Example:
 
-status      : Required            "status"      : 200
-status_text : -                   "status_text" : "The command succeeded"
-results     : -                   "results"     : {"slpf" : {"rule_number": 1234}, "versions" : ["1.0"]}
+REQUIRED FIELD:
+    "status"      : 200
+OPTIONAL FIELDS:
+    "status_text" : "The command succeeded"
+    "results"     : {"slpf" : {"rule_number": 1234}, "versions" : ["1.0"]}
 ```
 
 **Message Headers**
 ```
-Fields:                                HTTPS Example:
+HTTP Example:
 
-content_type : Transport dependent     Content-type: application/openc2-cmd+json;version=1.0
-request_id   : Transport dependent 
-msg_type     : Transport dependent
-...
+Content-type: application/openc2-cmd+json;version=1.0
 ```
 
  
