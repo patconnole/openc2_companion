@@ -207,9 +207,9 @@ How did we know that ipv4_net is a one-value string array?
 
     ["192.168.17.0/24"]
 
-It's actually complicated to figure out, and this is one of the barriers-to-entry we mentioned earlier. Instead of prescribing exactly how to format something in JSON, we have to deduce the format for any serialization.
+It's actually complicated to figure out, and this is one of the barriers-to-entry we mentioned earlier. Instead of prescribing exactly how to format something in JSON, we have to deduce the format for ANY serialization.
 
-Here's a horrible example (read at your own peril).
+Here's one way to figure out **ipv4_net** in **JSON**. Read at your own peril.
 
 1. Search for examples in any of the OpenC2 specs that use **ipv4_net**.
 2. Can't find any? Look in the language spec for its **type**.
@@ -223,7 +223,7 @@ Here's a horrible example (read at your own peril).
 10. Ok, now we know to use "192.168..../24" style addresses, but how do we know to put it into a JSON array? A one-value array???
 11. Go back to the *first* line, which reads "An IPv4 address range... **consists of two values**, an IPv4 address and a prefix."
 12. From there, we can guess that we are dealing with an array because of **"..two values.."**, and the fact that we saw the word "Array" in **Type: IPv4-Net (Array /ipv4-net)**
-13. What is **(Array /ipv4-net)**? It looks like some kind of type definition, but I don't recognize the language.
+13. What is **(Array /ipv4-net)**? It does look like a type definition, but I don't recognize the language.
 
 So now, we are **PRETTY SURE** that a JSON formatted "ipv4_net" value is
 
