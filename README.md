@@ -133,7 +133,7 @@ results     : -                   "results"     : {"slpf" : {"rule_number": 1234
 
 The forgotten children of OpenC2: The Headers. They're called [Common Message Elements](https://docs.oasis-open.org/openc2/oc2ls/v1.0/cs02/oc2ls-v1.0-cs02.html#32-message) in the Language Spec, but their implementation details are in the Transfer specs, because 'headers' is very dependent on transport protocol. They tell you if the payload is a Command or Response, in JSON or something else, etc.
 
-**Note that these are not FIELDS to populate, unlike "action" and "target", etc.** These are *names of data*, and that data needs to go in the fields of your transfer headers.
+**These are not FIELDS to populate, unlike "action" and "target", etc.** These are *names of data*, and that data needs to go in the fields of your transfer headers.
 
 **Message Headers (but not actual Headers...)**
 ```
