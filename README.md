@@ -107,7 +107,7 @@ An OpenC2 Message is a Command OR Response.
 * **Commands** are sent by Producers to Consumers. There can only be ONE Command in a Message.
 * **Responses** are sent by Consumers to Producers. There can only be ONE Response in a Message
 
-Again, notice how we didn't mention anything about Transfer, Serialization, or even what the Commands are yet? We also haven't said how many Responses are generated for any Commands, or when/how they're sent.
+Again, notice how we didn't mention anything about Transfer, Serialization, or even what the Commands are yet? We also haven't said how many Responses are generated for any Commands, or when/how they're sent. Will we? Perhaps...
 
 **Command Payload**
 ```
@@ -116,7 +116,7 @@ Fields:                             JSON Example:
 action     : Required             "action"     : "deny"
 target     : Required             "target"     : {"ipv4_net" : ["192.168.1.0/24"] }
 actuator   : -                    "actuator"   : {"slpf": {} }
-args       : -                    "args"       : {"response_requested" : "ack", "start_time" : 1534775460000 }
+args       : -                    "args"       : {"response_requested" : "ack", "start_time" : 55 }
 command_id : -                    "command_id" : "12345"
 ```
 
@@ -135,7 +135,7 @@ The forgotten children of OpenC2: The Headers. They're called [Common Message El
 
 **Note that these are not FIELDS to populate, unlike "action" and "target", etc.** These are *names of data*, and that data needs to go in the fields of your transfer headers.
 
-**Message Headers**
+**Message Headers (but not actual Headers...)**
 ```
 content_type : Is the payload JSON?
 msg_type     : Is the payload an OpenC2 Command or Response?
@@ -175,9 +175,11 @@ This is the bread-and-butter of OpenC2, the biggest selling point, and what make
 "action" : "deny",
 "target" : {"ipv4_net" : ["...."]}
 ```
-The basic syntax is shown below. 
+The basic JSON syntax is shown below. 
 
-One reason the syntax and format of commands doesn't feel too well-defined in the specs is, again, they're not defined directly, but instead reference other specifications, ie JSON. The specs say "OpenC2 is agnostic of serialization." But also, "You must support JSON". So we are shown a lot of examples in JSON, with an asterisk next to them saying "This section is non-normative". But, for the sake of ease and to actually implement something, let's assume OpenC2 messages are always JSON.
+One reason the syntax and format of commands doesn't feel too well-defined in the specs is, again, they're not defined directly in a Serialization format like JSON, but instead are defined abstractly, then mapped to specifications like JSON. So, there is obvious tension between "We're not dipping our toes in serialization directly" and "Well, we recognize you needs some hints on how to actually implement this." That's why there are a lot of examples in JSON, but with asterisks saying "This section is non-normative".
+
+For the sake of ease and to actually implement something, let's assume OpenC2 messages are always JSON.
 
 
 Back to the action/target pair:
@@ -215,7 +217,7 @@ Back to the action/target pair:
 
 **The "action" field is obviously simple**; it's just one word, and can only be a word from the actions listed in the Language Spec.
 
-**"target" is its own beast.** For example, 
+**"target" is its own beast.** Sure, it's always a one-key-dictionary, with key a word from the Language Spec targets, but what about the value of that dictionsary? For example, 
 
 How did we know that ipv4_net is a one-value string array?
 
