@@ -312,7 +312,7 @@ Well, what if we need to filter out some Consumers, even if they have the action
 Two fundemental filter scenarios:
 
 1. **Filtering out Shotgun Commands**: Producers may **SPAM** Consumers with commands that don't apply to those Consumers, and the Consumers need a way to know which commands are applicable to them. 
-    * `"actuator" : {"slpf": {"named_group": "perimeter"}}` --> *Not only must the action-target pair match, but only Consumers with SLPF that are member of the perimeter group should act on this command*
+    * `"actuator" : {"slpf": {"named_group": "perimeter82"}}` --> *Not only must the action-target pair match, but only Consumers with SLPF that are a member of the perimeter82 group should act on this command*
     * `"actuator" : {"slpf": {} }` --> *Not only must the action-target pair match, but the Consumer must have and use its SLPF actuator*
 1. **Multiple Actuator Profiles**: Consumers may implement more than one Actuator Profile, with duplicate action/target pairs.
     * `"actuator" : {"slpf": {} }` --> *I need the SLPF actuator to execute this action-target pair, even though this poorly designed Consumer has other Actuators with the same action-target*
