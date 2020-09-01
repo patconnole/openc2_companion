@@ -305,7 +305,7 @@ Ok, back to using the **actuator field** in an OpenC2 Command.
 
 Remember, the only required fields in an OpenC2 Command are the **action** and **target**.
 
-`"actuator" : {}` --> Anyone with this action/target pair, please act.
+`"actuator" : {}` --> Actuator field is blank or omitted. Anyone with this action/target pair, please act.
 
 Well, what if we need to filter out some Consumers, even if they have the action/target pair we sent? Sure, you could just not send them a command to begin with, but that isn't always feasible.
 
