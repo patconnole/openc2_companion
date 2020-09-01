@@ -287,10 +287,10 @@ It's not complicated, but one analogy that helps is the following:
 ![laptop_stickers](/images/laptop_sticker.png)
 
 In this analogy, the laptop is a Consumer, and the stickers advertise the Actuator Profiles it implements. 
-* The Windows sticker advertises an interface you are familiar with that has a "start" command. 
-* If there was a Blu-ray Disc sticker, you would expect to find a disc drive with an "open/close" command.
+* The **Windows sticker** advertises an interface you are familiar with that has a **"start" command**. 
+* If there was a **Blu-ray Disc sticker**, you would expect to find a disc drive with an **"open/close" command**.
 
-In the OpenC2 world, if we saw an "slpf" sticker, we would expect support for the "deny ipv4_net" command.
+In the OpenC2 world, **if we saw an "slpf" sticker, we would expect support for the "deny ipv4_net" command.**
 
 Well, where are the stickers in OpenC2? There are three kinds:
 
@@ -307,16 +307,14 @@ Remember, the only required fields in an OpenC2 Command are the **action** and *
 
 `"actuator" : {}` --> Anyone with this action/target pair, please act.
 
-Two fundamental things to understand:
+Well, what if we need to filter out some Consumers, even if they have the action/target pair we sent? Sure, you could just not send them a command to begin with, but that isn't always feasible.
+
+Two fundemental things to understand:
 
 1. **Multiple Actuator Profiles**: Consumers may implement more than one Actuator Profile.
     * `"actuator" : {"slpf": {} }` --> *Only Consumers with SLPF should act on this command*
 1. **Filtering out Shotgun Commands**: Producers may **SPAM** Consumers with commands that don't apply to those Consumers, and the Consumers need a way to know which commands are applicable to them. 
-    * `"actuator" : {"slpf": {"named_group": "perimeter"}}` --> *Only Consumers with SLPF and part of the SLPF perimeter group should act on this command*
-
-
-
-
+    * `"actuator" : {"slpf": {"named_group": "perimeter"}}` --> *Only Consumers with SLPF and a member part of the SLPF perimeter group should act on this command*
 
 
 
