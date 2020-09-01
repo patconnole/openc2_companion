@@ -111,22 +111,22 @@ Again, notice how we didn't mention anything about Transfer, Serialization, or e
 
 **Command Payload**
 ```
-Fields:                             JSON Example:
+Fields:                    Description:                      JSON Example:                        
                                            
-action     : Required             "action"     : "deny"
-target     : Required             "target"     : {"ipv4_net" : ["192.168.1.0/24"] }
-actuator   : -                    "actuator"   : {"slpf": {} }
-args       : -                    "args"       : {"response_requested" : "ack", "start_time" : 55 }
-command_id : -                    "command_id" : "12345"
+action     : Required      Do this                           "action"     : "deny"                 
+target     : Required      On this                           "target"     : {"ipv4_net ...         
+actuator   : -             Using this if you have it         "actuator"   : {"slpf": ...           
+args       : -             When to do it, if to reply..      "args"       : {"response_req...      
+command_id : -             Bookkeeping                       "command_id" : "12345"                
 ```
 
 **Response Payload**
 ```
-Fields:                             JSON Example:
+Fields:                    Description:                            JSON Example:
 
-status      : Required            "status"      : 200
-status_text : -                   "status_text" : "The command succeeded"
-results     : -                   "results"     : {"slpf" : {"rule_number": 1234}, "versions" : ["1.0"]}
+status      : Required     Machine readable result of a Command    "status"      : 200
+status_text : -            Human readable result                   "status_text" : "The command succeeded"
+results     : -            Data you asked for in the Command       "results"     : {"slpf" : {"rule_num...
 ```
 
 # Message: Headers
