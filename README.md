@@ -309,13 +309,12 @@ Remember, the only required fields in an OpenC2 Command are the **action** and *
 
 Well, what if we need to filter out some Consumers, even if they have the action/target pair we sent? Sure, you could just not send them a command to begin with, but that isn't always feasible.
 
-Two fundemental things to understand:
+Two fundemental filter scenarios:
 
+1. **Filtering out Shotgun Commands**: Producers may **SPAM** Consumers with commands that don't apply to those Consumers, and the Consumers need a way to know which commands are applicable to them. 
+    * `"actuator" : {"slpf": {"named_group": "perimeter"}}` --> *Only Consumers with SLPF and a member of the SLPF perimeter group should act on this command*
 1. **Multiple Actuator Profiles**: Consumers may implement more than one Actuator Profile.
     * `"actuator" : {"slpf": {} }` --> *Only Consumers with SLPF should act on this command*
-1. **Filtering out Shotgun Commands**: Producers may **SPAM** Consumers with commands that don't apply to those Consumers, and the Consumers need a way to know which commands are applicable to them. 
-    * `"actuator" : {"slpf": {"named_group": "perimeter"}}` --> *Only Consumers with SLPF and a member part of the SLPF perimeter group should act on this command*
-
 
 
 ## Example
