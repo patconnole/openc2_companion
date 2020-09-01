@@ -355,9 +355,9 @@ And sometimes we include the actuator field specifying SLPF:
 What does the Consumer do, assuming it processed the command successfully if able? How does it respond?
 
 
-| |             |"actuator": "" | "actuator": {"slpf".. |
+| |             |"actuator": {} | "actuator": {"slpf": {}} |
 |-|-|:-|:-|
-|1|slpf| &#x2705; 200 OK             | &#x2705;200 OK |
+|1|slpf| &#x2705; 200 OK             | &#x2705; 200 OK |
 |2|x-troublemaker|&#x2705; 200 OK             |:negative_squared_cross_mark: 404; not found |
 |3|x-acme| :negative_squared_cross_mark: 404; not found   |:negative_squared_cross_mark: 404; not found |
 |4|slpf + x-acme| &#x2705; 200 OK                                                          |&#x2705; 200 OK |
