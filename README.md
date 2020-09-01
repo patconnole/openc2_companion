@@ -177,7 +177,7 @@ This is the bread-and-butter of OpenC2, the biggest selling point, and what make
 ```
 The basic JSON syntax is shown below. 
 
-One reason the syntax and format of commands doesn't feel too well-defined in the specs is, again, they're not defined directly in a Serialization format like JSON, but instead are defined abstractly, then mapped to specifications like JSON. So, there is obvious tension between "We're not dipping our toes in serialization directly" and "Well, we recognize you needs some hints on how to actually implement this." That's why there are a lot of examples in JSON, but with asterisks saying "This section is non-normative".
+One reason the syntax and format of commands doesn't feel too well-defined in the specs is, again, they're not defined directly in a Serialization format like JSON, but instead are defined abstractly, then mapped to specifications like JSON. So, there is obvious tension between "We're not dipping our toes in serialization directly" and "Well, we recognize you need some hints on how to actually implement this." That's why there are a lot of examples in JSON, but with asterisks saying "This section is non-normative".
 
 For the sake of ease and to actually implement something, let's assume OpenC2 messages are always JSON.
 
@@ -217,7 +217,7 @@ Back to the action/target pair:
 
 **The "action" field is obviously simple**; it's just one word, and can only be a word from the actions listed in the Language Spec.
 
-**"target" is its own beast.** Sure, it's always a one-key-dictionary, with key a word from the Language Spec targets, but what about the value of that dictionsary? For example, 
+**"target" is its own beast.** Sure, it's always a one-key-dictionary, with key a word from the Language Spec targets, but what about the value of that dictionary? For example, 
 
 How did we know that ipv4_net is a one-value string array?
 
