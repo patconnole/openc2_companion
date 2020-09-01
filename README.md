@@ -255,7 +255,7 @@ Before we look at the **actuator field** of an OpenC2 Command, we need to know w
 
 # Actuator Profile
 
-An **Actuator Profile** defines your commands and what they do. For example, the **Stateless Packet Filter Actuator Profile** grabs a bunch of actions and targets from the Language spec, pairs them up as individual commands, then declares what those commands should do. On top of that, it gives itself a standard name: **"slpf"** (known as a namespace identifier "nsid").
+An **Actuator Profile** is a document that defines your commands and what they do. For example, the **Stateless Packet Filter Actuator Profile** grabs a bunch of actions and targets from the Language spec, pairs them up as individual commands, then declares what those commands should do. On top of that, it gives itself a standard name: **"slpf"** (known as a namespace identifier "nsid").
 
 ```
 +---------------------+                   +-------------------------+
