@@ -111,13 +111,13 @@ Again, notice how we didn't mention anything about Transfer, Serialization, or e
 
 **Command Payload**
 ```
-Fields:                    Description:                      JSON Example:                        
+Fields:                  Description:                                       JSON Example:                        
                                            
-action     : Required      Do this                           "action"     : "deny"                 
-target     : Required      To this                           "target"     : {"ipv4_net ...         
-actuator   : -             Using this, only if you have it   "actuator"   : {"slpf": ...           
-args       : -             When to do it, if to reply..      "args"       : {"response_req...      
-command_id : -             Bookkeeping                       "command_id" : "12345"                
+action     : Required    Do this                                           "action"     : "deny"                 
+target     : Required    To this                                           "target"     : {"ipv4_net ...         
+actuator   : -           Use this if you have it, otherwise do nothing     "actuator"   : {"slpf": ...           
+args       : -           When to do it, if to reply..                      "args"       : {"response_req...      
+command_id : -           Bookkeeping                                       "command_id" : "12345"                
 ```
 
 **Response Payload**
