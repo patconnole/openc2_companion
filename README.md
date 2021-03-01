@@ -177,7 +177,7 @@ This is the bread-and-butter of OpenC2, the biggest selling point, and what make
 ```
 The basic JSON syntax is shown below. 
 
-One reason the syntax and format of commands doesn't feel too well-defined in the specs is, again, they're not defined directly in a Serialization format like JSON, but instead are defined abstractly, then mapped to specifications like JSON. So, there is obvious tension between "We're not dipping our toes in serialization directly" and "Well, we recognize you need some hints on how to actually implement this." That's why there are a lot of examples in JSON, but with asterisks saying "This section is non-normative".
+One reason the syntax and format of commands doesn't feel too well-defined in the specs is, again, they're not defined directly in a Serialization format like JSON, but instead are defined abstractly, and it's inferred that those abstract definitions can map to *any* concrete serialization. But this isn't stated outloud, leaving some obvious tension between "We're not dipping our toes in serialization directly" and "Well, we recognize you need some hints on how to actually implement this." That's why there are a lot of examples in JSON, but with asterisks saying "This section is non-normative".
 
 For the sake of ease and to actually implement something, let's assume OpenC2 messages are always JSON.
 
@@ -233,7 +233,7 @@ Here's one way to figure out **ipv4_net** in **JSON**. Read at your own peril.
 4. Search the Language Spec for that.
 5. We find 6 references. Look for one that begins with **Type: IPv4-Net (Array /ipv4-net)**
 6. In the table there we see 2 values: **IPv4-Addr** and **Integer**
-7. Search the Language Spec for each of those.
+7. ~~Search the Language Spec for each of those.~~
 8. Just kidding. Your next move is to read the text *above* that table.
 9. The fourth line there says, **"JSON serialization of an IPv4 address range SHALL use the 'dotted/slash'.."**
 10. Ok, now we know to use "192.168..../24" style addresses, but how do we know to put it into a JSON array? A one-value array???
@@ -326,7 +326,7 @@ Say we have the following Actuator Profiles:
 | Actuator Profile | Description |
 |-|-|
 |slpf | Stateless Packet Filter |
-|x-troublemaker | Unknown, but supports **deny ipv4_net**  |
+|x-trouble | Unknown, but supports **deny ipv4_net**  |
 |x-acme | RoadRunner Hunting |
 
 And Consumers that implement them:
@@ -334,10 +334,10 @@ And Consumers that implement them:
 |Consumer |Actuator Profile(s)|  Duplicate Action-Target Pairs (besides query-features) |
 |-|-|-|
 |1|slpf |  -|
-|2|x-troublemaker |  - |
+|2|x-trouble |  - |
 |3|x-acme |  - |
 |4|slpf + x-acme | **none** |
-|5|slpf + x-troublemaker | **deny ipv4_net** |
+|5|slpf + x-trouble | **deny ipv4_net** |
 
 We send these consumers the same command:
 
@@ -358,10 +358,10 @@ What does the Consumer do, assuming it processed the command successfully if abl
 | Consumer | Actuator Profiles  |"actuator": {} | "actuator": {"slpf": {}} |
 |-|-|:-|:-|
 |1|slpf| &#x2705; 200 OK             | &#x2705; 200 OK |
-|2|x-troublemaker|&#x2705; 200 OK             |:negative_squared_cross_mark: 404; not found |
+|2|x-trouble|&#x2705; 200 OK             |:negative_squared_cross_mark: 404; not found |
 |3|x-acme| :negative_squared_cross_mark: 404; not found   |:negative_squared_cross_mark: 404; not found |
 |4|slpf + x-acme| &#x2705; 200 OK                                                          |&#x2705; 200 OK |
-|5|slpf + x-troublemaker| &#x274C; Behavior **and** Response are UNDEFINED  |&#x2705; 200 OK |
+|5|slpf + x-trouble| &#x274C; Behavior **and** Response are UNDEFINED  |&#x2705; 200 OK |
 
 
 The most obvious lesson here is that you should avoid defining Consumers that contain duplicate action-target pairs.
